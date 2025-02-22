@@ -1,19 +1,13 @@
 # 搭建私有网站
 
-> [!WARNING]
-> ~~由于项目目前还没有进入稳定状态，所以如果进行了私有部署，请随时关注该项目的最新更新，特别是代理部分的变化，后续将会修改使用策略。~~
->
-> ~~或者你可以修改`config/index.ts`中的`AVAILABLE_PROXY_LIST`变量，完全使用自己搭建的节点。~~
->
-> ~~另外，目前只有部署到 Deno Deploy 的文档，如果需要部署到其他平台，请在 Issue 中说明。~~
->
-> 2024.11.14 更新
->
-> 推荐使用 **[公共网站](https://wechat-article-exporter.deno.dev/)** + **私有代理节点** 的形式使用。
->
-> 如果你确实需要部署私有网站，可查看下面的部署教程。
->
-> 注意：公众网站(也就是 https://wechat-article-exporter.deno.dev/ )的功能是 **最全的**，后续某些 Pro 版功能只会出现在公共网站中，私有部署不支持。
+::: warning 注意
+
+公众网站(也就是 https://wechat-article-exporter.deno.dev/ )的功能是 **最全的**，后续某些 Pro 版功能只会出现在公共网站中，私有部署不支持。
+因此推荐使用 **[公共网站](https://wechat-article-exporter.deno.dev/)** + **私有代理节点** 的形式使用。
+
+如果你仍然需要部署私有网站，可查看下面的教程。
+:::
+
 
 ## 部署到 Deno Deploy
 

@@ -2,9 +2,7 @@
 
 私有代理节点部署在各种 serverless 环境，可以加速资源的下载进度。但由于目前节点代码并没有进行身份验证，所以请避免部署后的代理地址遭到泄露。如若发现节点流量异常，请销毁节点重新进行搭建(即更换代理地址)。
 
-<details>
-<summary>查看节点代码</summary>
-
+::: details 点我查看节点代码
 ```js
 const UA =
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.0.0 Safari/537.36";
@@ -182,7 +180,7 @@ export default {
     }
 }
 ```
-</details>
+:::
 
 
 目前该节点代码可部署在以下平台：

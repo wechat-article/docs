@@ -2,7 +2,10 @@
 
 `Credentials`即微信用户的个人凭证，是获取文章的评论和阅读量等数据所必需的。下面说明如何使用 [mitmproxy](https://mitmproxy.org/) 获取该数据：
 
-> 注意，Credentials 的有效期大概为30分钟，推荐在导出文章的时候重新获取。
+::: warning 注意
+Credentials 的有效期大概为30分钟，推荐在导出文章的时候重新获取。
+:::
+
 
 ## 1. 安装 `mitmproxy`
 

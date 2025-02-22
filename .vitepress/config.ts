@@ -5,7 +5,7 @@ import lightbox from "vitepress-plugin-lightbox";
 export default defineConfig({
   lang: "zh-CN",
   title: "公众号文章导出",
-  description: "一款开源 & 免费的公众号文章导出工具",
+  description: "一款开源 & 免费的在线公众号文章导出工具",
   lastUpdated: true,
   srcDir: 'src',
 
@@ -23,7 +23,8 @@ export default defineConfig({
           { text: '如何使用？', link: '/get-started/usage' },
           { text: '关于代理节点', link: '/get-started/proxy' },
           { text: '搭建私有代理节点', link: '/get-started/private-proxy' },
-        ]
+        ],
+        collapsed: false,
       },
       {
         text: 'Advanced',
@@ -32,6 +33,7 @@ export default defineConfig({
           { text: '私有部署', link: '/advanced/private-deploy' },
           { text: '导出其他格式', link: '/advanced/format' },
         ],
+        collapsed: false,
       }
     ],
 
@@ -54,7 +56,9 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/wechat-article' }
-    ]
+    ],
+
+    externalLinkIcon: true,
   },
 
   markdown: {
@@ -62,5 +66,9 @@ export default defineConfig({
       // Use lightbox plugin
       md.use(lightbox, {});
     },
+    lineNumbers: true,
+    image: {
+      lazyLoading: true
+    }
   },
 })

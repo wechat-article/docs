@@ -195,7 +195,7 @@ export default {
 
 ### 视频版
 
-https://github.com/user-attachments/assets/8269becd-56a3-4d82-9aca-345b53a36d76
+https://www.bilibili.com/video/BV1YKPMe1Exe/?vd_source=70feec6acc68b8226ba88debeeb82663
 
 ### 文字版
 

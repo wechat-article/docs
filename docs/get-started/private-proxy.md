@@ -195,7 +195,8 @@ export default {
 
 ### 视频版
 
-https://www.bilibili.com/video/BV1YKPMe1Exe/?vd_source=70feec6acc68b8226ba88debeeb82663
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114046632199888&bvid=BV1YKPMe1Exe&cid=28520220360&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:400px;"></iframe>
 
 ### 文字版
 

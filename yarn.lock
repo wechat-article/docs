@@ -869,6 +869,11 @@ mdast-util-to-hast@^13.0.0:
     unist-util-visit "^5.0.0"
     vfile "^6.0.0"
 
+medium-zoom@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/medium-zoom/-/medium-zoom-1.1.0.tgz#6efb6bbda861a02064ee71a2617a8dc4381ecc71"
+  integrity sha512-ewyDsp7k4InCUp3jRmwHBRFGyjBimKps/AJLjRSox+2q/2H4p/PNpQf+pwONWlJiOudkBXtbdmVbFjqyybfTmQ==
+
 micromark-util-character@^2.0.0:
   version "2.1.1"
   resolved "https://registry.npmjs.org/micromark-util-character/-/micromark-util-character-2.1.1.tgz#2f987831a40d4c510ac261e89852c4e9703ccda6"
@@ -929,6 +934,11 @@ perfect-debounce@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/perfect-debounce/-/perfect-debounce-1.0.0.tgz#9c2e8bc30b169cc984a58b7d5b28049839591d2a"
   integrity sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==
+
+photoswipe@^5.4.4:
+  version "5.4.4"
+  resolved "https://registry.npmjs.org/photoswipe/-/photoswipe-5.4.4.tgz#e045dc036453493188d5c8665b0e8f1000ac4d6e"
+  integrity sha512-WNFHoKrkZNnvFFhbHL93WDkW3ifwVOXSW3w1UuZZelSmgXpIGiZSNlZJq37rR8YejqME2rHs9EhH9ZvlvFH2NA==
 
 picocolors@^1.1.1:
   version "1.1.1"
@@ -1124,6 +1134,14 @@ vite@^5.4.14:
     rollup "^4.20.0"
   optionalDependencies:
     fsevents "~2.3.3"
+
+vitepress-plugin-lightbox@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/vitepress-plugin-lightbox/-/vitepress-plugin-lightbox-1.0.2.tgz#8d6302a38d3693e6df720ae4f2499f0e715be9b7"
+  integrity sha512-CLgz6iWzhTH/Buk0y/SPRy0Ukh+X9QPD1HMAlpVcBPPpENlKwtxKUrAzqwxgh/vOz+6Q+Kw5nKfPH1yL78Rlag==
+  dependencies:
+    medium-zoom "^1.1.0"
+    photoswipe "^5.4.4"
 
 vitepress@^1.6.3:
   version "1.6.3"

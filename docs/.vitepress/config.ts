@@ -1,5 +1,7 @@
 import {defineConfig} from 'vitepress'
 
+import lightbox from "vitepress-plugin-lightbox";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "zh-CN",
@@ -45,5 +47,12 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/wechat-article' }
     ]
-  }
+  },
+
+  markdown: {
+    config: (md) => {
+      // Use lightbox plugin
+      md.use(lightbox, {});
+    },
+  },
 })

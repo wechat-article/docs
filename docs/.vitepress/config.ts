@@ -2,7 +2,6 @@ import {defineConfig} from 'vitepress'
 
 import lightbox from "vitepress-plugin-lightbox";
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: "zh-CN",
   title: "公众号文章导出",
@@ -10,10 +9,10 @@ export default defineConfig({
   lastUpdated: true,
 
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '开始使用', link: 'https://wechat-article-exporter.deno.dev/' },
       { text: '教程', link: '/get-started/usage' },
+      { text: 'FAQ', link: '/faq' },
     ],
 
     sidebar: [
@@ -30,6 +29,7 @@ export default defineConfig({
         items: [
           { text: '获取 Credentials 信息', link: '/advanced/credentials' },
           { text: '私有部署', link: '/advanced/private-deploy' },
+          { text: '导出其他格式', link: '/advanced/format' },
         ],
       }
     ],

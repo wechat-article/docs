@@ -9,12 +9,18 @@ export default defineConfig({
   lastUpdated: true,
   srcDir: 'src',
 
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
+  ignoreDeadLinks: true,
+
   themeConfig: {
     nav: [
       { text: '开始使用', link: 'https://wechat-article-exporter.deno.dev/' },
       { text: '教程', link: '/get-started/usage' },
       { text: 'FAQ', link: '/faq' },
     ],
+    outlineTitle: "本页目录",
 
     sidebar: [
       {
@@ -46,13 +52,13 @@ export default defineConfig({
       pattern: 'https://github.com/wechat-article/docs/edit/main/docs/:path',
       text: '在 GitHub 上编辑该页面'
     },
-    // lastUpdated: {
-    //   text: '最后更新于',
-    //   formatOptions: {
-    //     dateStyle: 'short',
-    //     timeStyle: 'medium'
-    //   }
-    // },
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'medium',
+        timeStyle: 'short'
+      }
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/wechat-article' }

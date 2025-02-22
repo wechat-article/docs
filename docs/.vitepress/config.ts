@@ -24,6 +24,13 @@ export default defineConfig({
           { text: '关于代理节点', link: '/get-started/proxy' },
           { text: '搭建私有代理节点', link: '/get-started/private-proxy' },
         ]
+      },
+      {
+        text: 'Advanced',
+        items: [
+          { text: '获取 Credentials 信息', link: '/advanced/credentials' },
+          { text: '私有部署', link: '/advanced/private-deploy' },
+        ],
       }
     ],
 

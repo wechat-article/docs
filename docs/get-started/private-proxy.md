@@ -196,7 +196,7 @@ export default {
 ### 视频版
 
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114046632199888&bvid=BV1YKPMe1Exe&cid=28520220360&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:400px;"></iframe>
+<iframe src="https://github.com/user-attachments/assets/8269becd-56a3-4d82-9aca-345b53a36d76" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:400px;"></iframe>
 
 ### 文字版
 

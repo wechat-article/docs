@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "微信公众号文章导出"
-  text: ""
+  name: 微信公众号文章导出
+  text: 
   tagline: 一款 开源 & 免费 的在线公众号文章导出工具
   image:
     src: /logo.png

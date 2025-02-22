@@ -15,4 +15,4 @@
 
 ## 私有部署时出现二维码不显示的问题
 
-请开启https，因为微信返回的相关cookie中明确使用`secure`属性，所以只有https才能携带该cookie.
+请开启网站的 https，因为微信返回的相关 cookie 中明确使用 `secure` 属性，所以只有 https 才能携带该 cookie.

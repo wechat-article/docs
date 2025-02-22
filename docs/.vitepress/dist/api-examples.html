@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Runtime API Examples | 公众号文章导出</title>
+    <meta name="description" content="一款开源 & 免费的公众号文章导出工具">
+    <meta name="generator" content="VitePress v1.6.3">
+    <link rel="preload stylesheet" href="/assets/style.B6hV0gwj.css" as="style">
+    <link rel="preload stylesheet" href="/vp-icons.css" as="style">
+    
+    <script type="module" src="/assets/app.BYrRcJye.js"></script>
+    <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/assets/chunks/theme.BQlSnyD3.js">
+    <link rel="modulepreload" href="/assets/chunks/framework.BHrE6nLq.js">
+    <link rel="modulepreload" href="/assets/api-examples.md.CCqLhY5m.lean.js">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-6b1778fa><!--[--><!--]--><!--[--><span tabindex="-1" data-v-e5545557></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-e5545557>Skip to content</a><!--]--><!----><header class="VPNav" data-v-6b1778fa data-v-96ca70eb><div class="VPNavBar" data-v-96ca70eb data-v-84cd4ebe><div class="wrapper" data-v-84cd4ebe><div class="container" data-v-84cd4ebe><div class="title" data-v-84cd4ebe><div class="VPNavBarTitle has-sidebar" data-v-84cd4ebe data-v-36a21401><a class="title" href="/" data-v-36a21401><!--[--><!--]--><!----><span data-v-36a21401>公众号文章导出</span><!--[--><!--]--></a></div></div><div class="content" data-v-84cd4ebe><div class="content-body" data-v-84cd4ebe><!--[--><!--]--><div class="VPNavBarSearch search" data-v-84cd4ebe><!----></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-84cd4ebe data-v-4e8887f6><span id="main-nav-aria-label" class="visually-hidden" data-v-4e8887f6> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/get-started/faq.html" tabindex="0" data-v-4e8887f6 data-v-26f36fbe><!--[--><span data-v-26f36fbe>FAQ</span><!--]--></a><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-84cd4ebe data-v-0952ed9a><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-0952ed9a data-v-8e83378a data-v-4d1714e3><span class="check" data-v-4d1714e3><span class="icon" data-v-4d1714e3><!--[--><span class="vpi-sun sun" data-v-8e83378a></span><span class="vpi-moon moon" data-v-8e83378a></span><!--]--></span></span></button></div><!----><div class="VPFlyout VPNavBarExtra extra" data-v-84cd4ebe data-v-732d9956 data-v-4a72bf2a><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-4a72bf2a><span class="vpi-more-horizontal icon" data-v-4a72bf2a></span></button><div class="menu" data-v-4a72bf2a><div class="VPMenu" data-v-4a72bf2a data-v-cd59e9dd><!----><!--[--><!--[--><!----><div class="group" data-v-732d9956><div class="item appearance" data-v-732d9956><p class="label" data-v-732d9956>Appearance</p><div class="appearance-action" data-v-732d9956><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-732d9956 data-v-8e83378a data-v-4d1714e3><span class="check" data-v-4d1714e3><span class="icon" data-v-4d1714e3><!--[--><span class="vpi-sun sun" data-v-8e83378a></span><span class="vpi-moon moon" data-v-8e83378a></span><!--]--></span></span></button></div></div></div><!----><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-84cd4ebe data-v-bf9ccf4f><span class="container" data-v-bf9ccf4f><span class="top" data-v-bf9ccf4f></span><span class="middle" data-v-bf9ccf4f></span><span class="bottom" data-v-bf9ccf4f></span></span></button></div></div></div></div><div class="divider" data-v-84cd4ebe><div class="divider-line" data-v-84cd4ebe></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-6b1778fa data-v-6d80b622><div class="container" data-v-6d80b622><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-6d80b622><span class="vpi-align-left menu-icon" data-v-6d80b622></span><span class="menu-text" data-v-6d80b622>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-6d80b622 data-v-29ecf8bd><button data-v-29ecf8bd>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-6b1778fa data-v-72b6b8e6><div class="curtain" data-v-72b6b8e6></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-72b6b8e6><span class="visually-hidden" id="sidebar-aria-label" data-v-72b6b8e6> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-666635ae><section class="VPSidebarItem level-0 has-active" data-v-666635ae data-v-9d16706f><div class="item" role="button" tabindex="0" data-v-9d16706f><div class="indicator" data-v-9d16706f></div><h2 class="text" data-v-9d16706f>Get Started</h2><!----></div><div class="items" data-v-9d16706f><!--[--><div class="VPSidebarItem level-1 is-link" data-v-9d16706f data-v-9d16706f><div class="item" data-v-9d16706f><div class="indicator" data-v-9d16706f></div><a class="VPLink link link" href="/markdown-examples.html" data-v-9d16706f><!--[--><p class="text" data-v-9d16706f>Markdown Examples</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-9d16706f data-v-9d16706f><div class="item" data-v-9d16706f><div class="indicator" data-v-9d16706f></div><a class="VPLink link link" href="/api-examples.html" data-v-9d16706f><!--[--><p class="text" data-v-9d16706f>Runtime API Examples</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-6b1778fa data-v-54515a88><div class="VPDoc has-sidebar has-aside" data-v-54515a88 data-v-c8e5fd22><!--[--><!--]--><div class="container" data-v-c8e5fd22><div class="aside" data-v-c8e5fd22><div class="aside-curtain" data-v-c8e5fd22></div><div class="aside-container" data-v-c8e5fd22><div class="aside-content" data-v-c8e5fd22><div class="VPDocAside" data-v-c8e5fd22 data-v-32c5f93f><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-32c5f93f data-v-a95afd34><div class="content" data-v-a95afd34><div class="outline-marker" data-v-a95afd34></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-a95afd34>On this page</div><ul class="VPDocOutlineItem root" data-v-a95afd34 data-v-72d0d7f5><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-32c5f93f></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-c8e5fd22><div class="content-container" data-v-c8e5fd22><!--[--><!--]--><main class="main" data-v-c8e5fd22><div style="position:relative;" class="vp-doc _api-examples" data-v-c8e5fd22><div><h1 id="runtime-api-examples" tabindex="-1">Runtime API Examples <a class="header-anchor" href="#runtime-api-examples" aria-label="Permalink to &quot;Runtime API Examples&quot;">​</a></h1><p>This page demonstrates usage of some of the runtime APIs provided by VitePress.</p><p>The main <code>useData()</code> API can be used to access site, theme, and page data for the current page. It works in both <code>.md</code> and <code>.vue</code> files:</p><div class="language-md vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">md</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;script setup&gt;</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">import { useData } from &#39;vitepress&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">const { theme, page, frontmatter } = useData()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;/script&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## Results</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Theme Data</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ theme }}&lt;/pre&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Page Data</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ page }}&lt;/pre&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">### Page Frontmatter</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&lt;pre&gt;{{ frontmatter }}&lt;/pre&gt;</span></span></code></pre></div><h2 id="results" tabindex="-1">Results <a class="header-anchor" href="#results" aria-label="Permalink to &quot;Results&quot;">​</a></h2><h3 id="theme-data" tabindex="-1">Theme Data <a class="header-anchor" href="#theme-data" aria-label="Permalink to &quot;Theme Data&quot;">​</a></h3><pre>{
+  &quot;nav&quot;: [
+    {
+      &quot;text&quot;: &quot;FAQ&quot;,
+      &quot;link&quot;: &quot;/get-started/faq&quot;
+    }
+  ],
+  &quot;sidebar&quot;: [
+    {
+      &quot;text&quot;: &quot;Get Started&quot;,
+      &quot;items&quot;: [
+        {
+          &quot;text&quot;: &quot;Markdown Examples&quot;,
+          &quot;link&quot;: &quot;/markdown-examples&quot;
+        },
+        {
+          &quot;text&quot;: &quot;Runtime API Examples&quot;,
+          &quot;link&quot;: &quot;/api-examples&quot;
+        }
+      ]
+    }
+  ]
+}</pre><h3 id="page-data" tabindex="-1">Page Data <a class="header-anchor" href="#page-data" aria-label="Permalink to &quot;Page Data&quot;">​</a></h3><pre>{
+  &quot;title&quot;: &quot;Runtime API Examples&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;frontmatter&quot;: {
+    &quot;outline&quot;: &quot;deep&quot;
+  },
+  &quot;headers&quot;: [],
+  &quot;relativePath&quot;: &quot;api-examples.md&quot;,
+  &quot;filePath&quot;: &quot;api-examples.md&quot;
+}</pre><h3 id="page-frontmatter" tabindex="-1">Page Frontmatter <a class="header-anchor" href="#page-frontmatter" aria-label="Permalink to &quot;Page Frontmatter&quot;">​</a></h3><pre>{
+  &quot;outline&quot;: &quot;deep&quot;
+}</pre><h2 id="more" tabindex="-1">More <a class="header-anchor" href="#more" aria-label="Permalink to &quot;More&quot;">​</a></h2><p>Check out the documentation for the <a href="https://vitepress.dev/reference/runtime-api#usedata" target="_blank" rel="noreferrer">full list of runtime APIs</a>.</p></div></div></main><footer class="VPDocFooter" data-v-c8e5fd22 data-v-e80598c5><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e80598c5><span class="visually-hidden" id="doc-footer-aria-label" data-v-e80598c5>Pager</span><div class="pager" data-v-e80598c5><a class="VPLink link pager-link prev" href="/markdown-examples.html" data-v-e80598c5><!--[--><span class="desc" data-v-e80598c5>Previous page</span><span class="title" data-v-e80598c5>Markdown Examples</span><!--]--></a></div><div class="pager" data-v-e80598c5><!----></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><!----><!--[--><!--]--></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"api-examples.md\":\"CCqLhY5m\",\"get-started_credentials.md\":\"DOnVdyGy\",\"get-started_database.md\":\"BpdTFj7u\",\"get-started_faq.md\":\"BacYc0a5\",\"index.md\":\"uI_koDLo\",\"markdown-examples.md\":\"gSmptGD0\",\"private-proxy.md\":\"4IAbxbaA\",\"下载流量分析.md\":\"BnmluK0D\",\"公众号登录原理.md\":\"CORhRKyA\",\"微信接口频率限制.md\":\"C1YlgsvD\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"公众号文章导出\",\"description\":\"一款开源 & 免费的公众号文章导出工具\",\"base\":\"/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"nav\":[{\"text\":\"FAQ\",\"link\":\"/get-started/faq\"}],\"sidebar\":[{\"text\":\"Get Started\",\"items\":[{\"text\":\"Markdown Examples\",\"link\":\"/markdown-examples\"},{\"text\":\"Runtime API Examples\",\"link\":\"/api-examples\"}]}]},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":false}");</script>
+    
+  </body>
+</html>

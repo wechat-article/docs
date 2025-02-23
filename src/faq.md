@@ -9,11 +9,11 @@
 
 首先确认扫码登录时使用的是 **服务号**，而非 **小程序**，如下图所示：
 
-![使用公众号登录](assets/wechat-login.png)
+![使用公众号登录](assets/usage/wechat-login.png)
 
 其次，由于该项目的原理是基于公众号后台的公众号文章搜索功能，因此目标公众号必须开启 **允许通过名称搜索** 才能获取到文章数据，如下图所示：
 
-![公众号隐私设置](assets/account-privacy-setting.png)
+![公众号隐私设置](assets/faq/account-privacy-setting.png)
 
 某些公众号搜索不到也可能是因为没有开启这个选项导致的。
 

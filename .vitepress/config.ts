@@ -38,6 +38,7 @@ export default defineConfig({
           { text: '获取 Credentials 信息', link: '/advanced/credentials' },
           { text: '私有部署', link: '/advanced/private-deploy' },
           { text: '导出其他格式', link: '/advanced/format' },
+          { text: '常见问题', link: '/faq' },
         ],
         collapsed: false,
       }

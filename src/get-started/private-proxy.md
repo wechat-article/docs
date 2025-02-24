@@ -185,8 +185,8 @@ export default {
 
 目前该节点代码可部署在以下平台：
 
-- Deno Deploy
-- Cloudflare Worker
+- [Deno Deploy](https://deno.com/deploy)
+- [Cloudflare Worker](https://workers.cloudflare.com/)
 
 
 ## 部署到 Deno Deploy

@@ -43,6 +43,12 @@ export default defineConfig({
         collapsed: false,
       },
       {
+        text: 'Tutorials',
+        items: [
+          { text: '如何批量导出某个公众号的全部文章链接？', link: '/tutorials/export-article-links' },
+        ],
+      },
+      {
         text: 'Misc',
         items: [
           { text: '整体架构', link: '/misc/architecture' },

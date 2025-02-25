@@ -41,6 +41,15 @@ export default defineConfig({
           { text: '常见问题', link: '/faq' },
         ],
         collapsed: false,
+      },
+      {
+        text: 'Misc',
+        items: [
+          { text: '整体架构', link: '/misc/architecture' },
+          { text: '成为内测用户', link: '/misc/insider' },
+          { text: 'QQ群', link: '/misc/qq-group' },
+        ],
+        collapsed: false,
       }
     ],
 

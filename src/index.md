@@ -19,21 +19,37 @@ hero:
 
 features:
   - title: 无需安装
-    details: 可在线使用，不需要安装复杂的 python / node / docker 等环境
-  - title: 搜索
-    details: 支持公众号搜索，号内文章搜素（根据标题关键字搜索）
-  - title: 导出
-    details: 导出 HTML 格式，保证 100% 还原原文样式
+    details: 在线使用，不需要配置复杂的本地环境 (下载评论数据时需要配合本地的抓包软件)
+  - title: 支持搜索
+    details: 支持公众号搜索，号内文章搜素（标题关键字）
+  - title: 文章导出
+    details: 导出 HTML 格式，保证高保真还原文章版式
   - title: 文章过滤
-    details: 导出时支持文章过滤，包括作者、标题、发布时间、原创、所属合集等
-  - title: 合集
-    details: 支持公众号合集文章导出
+    details: 导出时支持文章过滤，包括作者、标题、发布时间、是否原创、所属合集等
+  - title: 合集下载
+    details: 支持公众号内合集文章的批量导出
   - title: 内嵌的音视频
     details: 支持内嵌的音视频导出
   - title: 元数据
-    details: 支持评论、阅读量、点赞量等各种元数据的导出
+    details: 支持评论、阅读量、点赞量等各种元数据的抓取
   - title: 格式转换 (开发中)
-    details: 支持将导出的 HTML 格式转为 PDF / 图片 / Markdown 等格式
+    details: 支持将导出的 HTML 原始格式转为 PDF / 图片 / Markdown 等格式
   - title: API (开发中)
-    details: 支持 API 调用
+    details: 支持通过 API 调用
 ---
+
+## 界面
+
+### 抓取指定公众号文章链接
+![](assets/index/index-1.png)
+
+### 文章导出
+![](assets/index/index-2.png)
+
+### 合集下载
+![](assets/index/index-3.png)
+
+### 使用队列多线程下载
+![](assets/index/index-4.png)
+
+<a href="https://wechat-article-exporter.deno.dev/" target="_blank">前往使用</a>

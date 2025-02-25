@@ -3,7 +3,7 @@ import DefaultTheme from "vitepress/theme";
 import { onMounted } from "vue";
 import { useRouter } from "vitepress";
 import mediumZoom from "medium-zoom";
-import Comment from "./Comment.vue";
+import Comments from "./Comments.vue";
 
 const { Layout } = DefaultTheme;
 const router = useRouter();
@@ -24,9 +24,8 @@ router.onAfterRouteChanged = setupMediumZoom;
 
 <template>
   <Layout>
-    <!-- #doc-after 表示在每篇文章的最后位置添加 Comment 组件 -->
     <template #doc-after>
-      <Comment />
+      <Comments />
     </template>
   </Layout>
 </template>

@@ -1,38 +1,44 @@
 {
-  "hash": "a8d0178c",
+  "hash": "ad42ca4d",
   "configHash": "fbf5d80e",
-  "lockfileHash": "603ec23a",
-  "browserHash": "90c1e2ac",
+  "lockfileHash": "4c3d2e50",
+  "browserHash": "f23c0045",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "93047a82",
+      "fileHash": "e03f0393",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "2ea469ee",
+      "fileHash": "50ff9707",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "ba8ab1e0",
+      "fileHash": "c3ee4883",
       "needsInterop": false
     },
     "busuanzi.pure.js": {
       "src": "../../../node_modules/busuanzi.pure.js/index.js",
       "file": "busuanzi__pure__js.js",
-      "fileHash": "16c43e11",
+      "fileHash": "0b46afa2",
       "needsInterop": true
     },
     "medium-zoom": {
       "src": "../../../node_modules/medium-zoom/dist/medium-zoom.esm.js",
       "file": "medium-zoom.js",
-      "fileHash": "cfa61b98",
+      "fileHash": "35bd87c4",
       "needsInterop": false
+    },
+    "gitalk": {
+      "src": "../../../node_modules/gitalk/dist/gitalk.js",
+      "file": "gitalk.js",
+      "fileHash": "e771356d",
+      "needsInterop": true
     }
   },
   "chunks": {

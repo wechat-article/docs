@@ -10,7 +10,10 @@ const init = () => {
   if (inBrowser) {
     const wrap = document.createElement('div')
     wrap.setAttribute('id', 'gitalk-page-container')
-    commentRef.value?.appendChild(wrap) // 把组件加入到想加载的地方 // querySelector的节点可自己根据自己想加载的地方设置
+
+    // 把组件加入到想加载的地方 // querySelector的节点可自己根据自己想加载的地方设置
+    commentRef.value?.appendChild(wrap)
+
     const gitTalk = new Gitalk({
       id: location.pathname, // 可选。默认为 location.href
       owner: 'wechat-article', // GitHub repository 所有者
@@ -32,5 +35,5 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="commentRef"></div>
+  <div ref="commentRef"></div>
 </template>

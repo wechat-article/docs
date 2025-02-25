@@ -4,8 +4,8 @@ import lightbox from "vitepress-plugin-lightbox";
 
 export default defineConfig({
   lang: "zh-CN",
-  title: "公众号文章导出",
-  description: "一款开源 & 免费的在线公众号文章导出工具",
+  title: "公众号文章下载",
+  description: "一款开源 & 免费的在线公众号文章下载工具",
   lastUpdated: true,
   srcDir: 'src',
 
@@ -37,7 +37,7 @@ export default defineConfig({
         items: [
           { text: '获取 Credentials 信息', link: '/advanced/credentials' },
           { text: '私有部署', link: '/advanced/private-deploy' },
-          { text: '导出其他格式', link: '/advanced/format' },
+          { text: '下载其他格式', link: '/advanced/format' },
           { text: '常见问题', link: '/faq' },
         ],
         collapsed: false,

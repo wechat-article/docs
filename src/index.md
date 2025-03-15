@@ -32,24 +32,25 @@ features:
     details: 支持内嵌的音视频下载
   - title: 元数据
     details: 支持评论、阅读量、点赞量等各种元数据的抓取
-  - title: 格式转换 (开发中)
+  - title: 格式转换 (计划中)
     details: 支持将下载的 HTML 原始格式转为 PDF / 图片 / Markdown 等格式
-  - title: API (开发中)
+  - title: API (计划中)
     details: 支持通过 API 调用
 ---
 
-## 界面
+## 界面展示
 
-### 抓取指定公众号文章链接
+### 抓取指定公众号的文章链接
 ![](assets/index/index-1.png)
 
-### 文章下载
+### 文章批量导出
 ![](assets/index/index-2.png)
 
 ### 合集下载
 ![](assets/index/index-3.png)
 
-### 使用队列多线程下载
+### 公共代理运行状况
 ![](assets/index/index-4.png)
+
 
 <a href="https://wechat-article-exporter.deno.dev/" target="_blank">前往使用</a>

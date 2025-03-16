@@ -6,12 +6,21 @@
 Credentials 的有效期大概为30分钟，推荐在下载文章的时候重新获取。
 :::
 
+## 视频版
 
-## 1. 安装 `mitmproxy`
+::: tip 提示
+视频里面没有包含 mitmproxy 的安装
+:::
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114169793741807&bvid=BV1umQxYtE8z&cid=28888862331&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:400px;"></iframe>
+
+## 文字版
+
+### 1. 安装 `mitmproxy`
 
 按照官方的 [安装教程](https://docs.mitmproxy.org/stable/overview-installation/) 在你的系统上安装该工具。
 
-## 2. 配置 `mitmproxy`
+### 2. 配置 `mitmproxy`
 
 在控制台启动`mitmweb`，如下所示:
 
@@ -33,7 +42,7 @@ Credentials 的有效期大概为30分钟，推荐在下载文章的时候重新
 
 下载对应系统的证书文件并安装进系统中。证书安装之后，`mitmproxy`的配置就完成了。
 
-## 3. 抓取 Credentials
+### 3. 抓取 Credentials
 
 重启`mitmweb`，然后浏览器打开抓包页面，搜索过滤器设置为:
 ```

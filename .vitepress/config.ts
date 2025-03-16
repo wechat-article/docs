@@ -21,7 +21,10 @@ export default defineConfig({
       { text: "Features", link: "/misc/features" },
       { text: "FAQ", link: "/faq" },
     ],
-    outlineTitle: "本页目录",
+    outline: {
+      label: '本页目录',
+      level: 'deep',
+    },
 
     sidebar: [
       {
@@ -51,6 +54,7 @@ export default defineConfig({
             link: "/tutorials/export-article-links",
           },
         ],
+        collapsed: false,
       },
       {
         text: "Misc",
@@ -66,7 +70,7 @@ export default defineConfig({
 
     footer: {
       // message: 'Released under the MIT License.',
-      copyright: "Copyright © 2024-present Jock",
+      copyright: "版权所有 © 2024-2025 Jock",
     },
 
     editLink: {

@@ -1,4 +1,4 @@
-# 如何获取 Credentials 信息
+# 如何获取 Credential 信息
 
 `Credentials`即微信用户的个人凭证，是获取文章的评论和阅读量等数据所必需的。下面说明如何使用 [mitmproxy](https://mitmproxy.org/) 获取该数据：
 
@@ -12,7 +12,7 @@ Credentials 的有效期大概为30分钟，推荐在下载文章的时候重新
 视频里面没有包含 mitmproxy 的安装
 :::
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114169793741807&bvid=BV1umQxYtE8z&cid=28888862331&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:400px;"></iframe>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114175179296703&bvid=BV1hoQeYWEf4&cid=28905639284&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%;height:400px;"></iframe>
 
 ## 文字版
 

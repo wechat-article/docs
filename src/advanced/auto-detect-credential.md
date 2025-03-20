@@ -17,7 +17,7 @@
 我们需要下载这个 mitmproxy 插件，该插件的名字为`credential.py`，下载后，执行以下命令启动`mitmproxy`并加载该插件：
 
 ```shell
-mitmdump -s credential.py
+mitmdump -s credential.py -q
 ```
 
 执行后的结果如下：

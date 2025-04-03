@@ -146,7 +146,7 @@ export default {
                     headers: {
                         "Access-Control-Allow-Origin": "*",
                         "Access-Control-Allow-Methods": "GET, POST",
-                        "Access-Control-Allow-Headers": "Content-Type",
+                        "Access-Control-Allow-Headers": "Content-Type, Authorization",
                         "Access-Control-Max-Age": "86400",
                     }
                 });
@@ -171,6 +171,9 @@ export default {
             return new Response(response.body, {
                 headers: {
                     "Access-Control-Allow-Origin": origin,
+                    "Access-Control-Allow-Methods": "GET, POST",
+                    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+                    "Access-Control-Max-Age": "86400",
                     "Content-Type": response.headers.get("Content-Type"),
                 },
             });

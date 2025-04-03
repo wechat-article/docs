@@ -140,18 +140,6 @@ function wfetch(url, method, body, headers = {}) {
 export default {
     async fetch(request) {
         try {
-            // 处理预检请求
-            if (request.method === "OPTIONS") {
-                return new Response(null, {
-                    headers: {
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Methods": "GET, POST",
-                        "Access-Control-Allow-Headers": "Content-Type, Authorization",
-                        "Access-Control-Max-Age": "86400",
-                    }
-                });
-            }
-
             const {
                 origin,
                 targetURL,
@@ -171,8 +159,6 @@ export default {
             return new Response(response.body, {
                 headers: {
                     "Access-Control-Allow-Origin": origin,
-                    "Access-Control-Allow-Methods": "GET, POST",
-                    "Access-Control-Allow-Headers": "Content-Type, Authorization",
                     "Access-Control-Max-Age": "86400",
                     "Content-Type": response.headers.get("Content-Type"),
                 },

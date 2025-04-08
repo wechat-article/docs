@@ -62,7 +62,6 @@ export default defineConfig({
         items: [
           { text: "Features", link: "/misc/features" },
           { text: "整体架构", link: "/misc/architecture" },
-          { text: "申请内测", link: "/misc/insider" },
           { text: "QQ群", link: "/misc/qq-group" },
         ],
         collapsed: false,

@@ -16,7 +16,7 @@ export default defineConfig({
 
   themeConfig: {
     nav: [
-      { text: "开始使用", link: "https://wechat-article-exporter.deno.dev/" },
+      { text: "开始使用", link: "https://exporter.wxdown.online/" },
       { text: "教程", link: "/get-started/usage" },
       { text: "Features", link: "/misc/features" },
       { text: "FAQ", link: "/faq" },

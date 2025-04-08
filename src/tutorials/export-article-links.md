@@ -2,7 +2,7 @@
 
 :::info 本文需要的工具
 1. 一个微信服务号或订阅号 (没有的话，可以去 [微信公众平台](https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&lang=zh_CN) 免费注册)
-2. [微信公众号文章导出工具](https://wechat-article-exporter.deno.dev/)
+2. [微信公众号文章导出工具](https://exporter.wxdown.online/)
 :::
 
 :::warning 注意
@@ -25,7 +25,7 @@
 
 ## 2. 登录网站
 
-进入网站的 [登录页面](https://wechat-article-exporter.deno.dev/login)，用微信扫描页面上的二维码，然后选择自己注册的 **公众号** 进行登录。
+进入网站的 [登录页面](https://exporter.wxdown.online/login)，用微信扫描页面上的二维码，然后选择自己注册的 **公众号** 进行登录。
 
 ::: tip 提示
 注意，必须选择公众号/服务号登录，不能使用小程序登录。
@@ -35,7 +35,7 @@
 
 ## 3. 搜索目标公众号
 
-通过 [网站首页](https://wechat-article-exporter.deno.dev/) 左上角的公众号切换按钮，搜索目标公众号，如下图所示：
+通过 [网站首页](https://exporter.wxdown.online/) 左上角的公众号切换按钮，搜索目标公众号，如下图所示：
 
 ![切换账号](../assets/usage/switch-account.png)
 

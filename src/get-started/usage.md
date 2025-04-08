@@ -13,7 +13,7 @@
 
 ## 2. 二维码扫码登录
 
-进入网站的 [登录页面](https://wechat-article-exporter.deno.dev/login)，用微信扫描页面上的二维码，然后选择自己注册的 **公众号** 进行登录。
+进入网站的 [登录页面](https://exporter.wxdown.online/login)，用微信扫描页面上的二维码，然后选择自己注册的 **公众号** 进行登录。
 
 ::: tip 提示
 注意，必须选择公众号/服务号登录，不能使用小程序登录。
@@ -36,7 +36,7 @@
 
 ## 4. 搜索目标公众号，开始下载文章
 
-通过 [网站首页](https://wechat-article-exporter.deno.dev/) 左上角的公众号切换按钮，搜索自己感兴趣的公众号，如下图所示：
+通过 [网站首页](https://exporter.wxdown.online/) 左上角的公众号切换按钮，搜索自己感兴趣的公众号，如下图所示：
 
 ![切换账号](../assets/usage/switch-account.png)
 

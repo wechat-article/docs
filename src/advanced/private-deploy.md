@@ -2,8 +2,8 @@
 
 ::: warning 注意
 
-网站(也就是 https://wechat-article-exporter.deno.dev/ )的功能是 **最全的**，后续某些 Pro 版功能只会出现在该网站中，私有部署的版本不支持。
-因此推荐使用 **[网站](https://wechat-article-exporter.deno.dev/)** + **私有代理节点** 的形式使用。
+网站(也就是 https://exporter.wxdown.online/ )的功能是 **最全的**，后续某些 Pro 版功能只会出现在该网站中，私有部署的版本不支持。
+因此推荐使用 **[网站](https://exporter.wxdown.online/)** + **私有代理节点** 的形式使用。
 
 如果你仍然需要部署私有网站，可查看下面的教程。
 :::

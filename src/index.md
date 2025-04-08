@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 开始使用
-      link: https://wechat-article-exporter.deno.dev/
+      link: https://exporter.wxdown.online/
     - theme: alt
       text: 查看教程
       link: /get-started/usage
@@ -53,4 +53,4 @@ features:
 ![](assets/index/index-4.png)
 
 
-<a href="https://wechat-article-exporter.deno.dev/" target="_blank">前往使用</a>
+<a href="https://exporter.wxdown.online/" target="_blank">前往使用</a>

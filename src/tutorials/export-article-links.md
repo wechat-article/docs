@@ -1,7 +1,7 @@
 # 如何批量导出某个公众号的全部文章链接？
 
 :::info 本文需要的工具
-1. 一个微信服务号或订阅号 (没有的话，可以去 [微信公众平台](https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&lang=zh_CN) 免费注册)
+1. 一个微信 **订阅号** 或 **服务号** (没有的话，可以去 [微信公众平台](https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&lang=zh_CN) 免费注册)
 2. [微信公众号文章导出工具](https://exporter.wxdown.online/)
 :::
 
@@ -14,7 +14,7 @@
 ## 1. 注册公众号
 
 ::: tip 提示
-已有订阅号/服务号的话可跳过该步骤
+若你已经有一个可用的 **订阅号** 或者 **服务号** 的话可跳过该步骤。
 :::
 
 
@@ -25,43 +25,24 @@
 
 ## 2. 登录网站
 
-进入网站的 [登录页面](https://exporter.wxdown.online/login)，用微信扫描页面上的二维码，然后选择自己注册的 **公众号** 进行登录。
+注册完公众号之后，进入网站的 [登录页面](https://exporter.wxdown.online/login)，用微信扫描页面上的二维码，选择自己注册的 **公众号** 进行登录。
 
 ::: tip 提示
-注意，必须选择公众号/服务号登录，不能使用小程序登录。
+注意，这里必须选择 **公众号** 或者 **服务号** 进行登录，不能使用 **小程序** 登录，否则后续无法获取数据。
 :::
 
 ![使用公众号登录](../assets/usage/wechat-login.png)
 
-## 3. 搜索目标公众号
 
-通过 [网站首页](https://exporter.wxdown.online/) 左上角的公众号切换按钮，搜索目标公众号，如下图所示：
+## 3. 添加公众号，开始抓取文章链接
 
-![切换账号](../assets/usage/switch-account.png)
+在 [公众号管理](https://exporter.wxdown.online/dashboard/account) 页面添加一个公众号，通过同步按钮拉取该公众号的所有文章链接。
 
-![搜索目标公众号](../assets/tutorials/search-account.png)
+![同步文章链接](../assets/usage/sync-article-links.png)
 
 
-## 4. 抓取文章链接
+## 4. 导出链接
 
-通过翻页的方式将该公众号内的所有文章都抓取下来，右下角的加载进度可以检查是否抓取完整，如下图所示：
+在 [文章下载](https://exporter.wxdown.online/dashboard/article) 页面选择目标公众号，勾选对应的文章，通过右上角的【导出】选择导出excel/json，如下图所示：
 
-![文章加载进度](../assets/tutorials/article-load-progress.png)
-
-:::danger 警告
-如果文章太多(超过50页)，最好不要短时间内抓取所有，否则很容易触发微信的限制，导致公众号相关接口被封。
-
-也可以使用自动翻页的方式，但此方式因为以上原因存在封号的风险，酌情使用。
-:::
-
-## 5. 导出链接
-
-通过右上角的菜单【数据导出】进入到后台，如下图所示：
-![进入后台](../assets/tutorials/enter-dashboard.png)
-
-按照下面的步骤进行操作：
 ![导出文章链接](../assets/tutorials/export-article-links.png)
-
-最后，看一下导出的结果：
-
-![导出的公众号文章链接](../assets/tutorials/article-links-excel.png)

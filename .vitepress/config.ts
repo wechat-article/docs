@@ -30,7 +30,7 @@ export default defineConfig({
       {
         text: "Getting Started",
         items: [
-          { text: "如何使用？", link: "/get-started/usage" },
+          { text: "快速上手", link: "/get-started/usage" },
           { text: "关于代理节点", link: "/get-started/proxy" },
           { text: "搭建私有代理节点", link: "/get-started/private-proxy" },
         ],
@@ -40,9 +40,9 @@ export default defineConfig({
         text: "Advanced",
         items: [
           { text: "获取 Credential 信息", link: "/advanced/credential" },
-          { text: "自动获取 Credential", link: "/advanced/auto-detect-credential" },
+          { text: "自动抓取 Credential (mitmproxy插件版)", link: "/advanced/auto-detect-credential" },
+          { text: "自动抓取 Credential (wxdown程序版)", link: "/advanced/wxdown-service" },
           { text: "私有部署", link: "/advanced/private-deploy" },
-          { text: "下载其他格式", link: "/advanced/format" },
           { text: "常见问题", link: "/faq" },
         ],
         collapsed: false,

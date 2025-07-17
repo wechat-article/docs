@@ -1,5 +1,11 @@
 # 如何获取 Credential 信息
 
+::: warning 注意
+目前官网已废弃手动抓取 Credential 的方式，该教程仅针对私有部署的网站。
+
+若你使用的是官方部署的网站，请参考自动抓取 Credential 教程。
+:::
+
 `Credentials`即微信用户的个人凭证，是获取文章的评论和阅读量等数据所必需的。下面说明如何使用 [mitmproxy](https://mitmproxy.org/) 获取该数据：
 
 ::: warning 注意

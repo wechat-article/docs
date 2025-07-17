@@ -1,6 +1,6 @@
 # 如何获取 Credential 信息
 
-::: warning 注意
+::: danger 警告
 目前官网已废弃手动抓取 Credential 的方式，该教程仅针对私有部署的网站。
 
 若你使用的是官方部署的网站，请参考自动抓取 Credential 教程。

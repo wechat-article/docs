@@ -35,7 +35,7 @@ features:
     details: 支持公众号内合集文章的批量下载
   - title: 内嵌的音视频
     details: 支持内嵌的音视频下载
-  - title: API (计划中)
+  - title: API (内测中)
     details: 支持通过 API 调用
   - title: RSS (计划中)
     details: 支持 RSS 订阅

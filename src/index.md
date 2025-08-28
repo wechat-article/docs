@@ -23,6 +23,8 @@ hero:
 features:
   - title: 无需安装
     details: 在线使用，不需要配置本地环境 (下载评论数据时需要配合本地的抓包软件)
+  - title: 私有化部署
+    details: 支持 docker 私有化部署，数据完全由自己控制
   - title: 支持多公众号
     details: 可以添加多个公众号(数量无限制)，批量抓取文章链接
   - title: 元数据

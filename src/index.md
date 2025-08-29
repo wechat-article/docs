@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: 微信公众号文章下载
+  name: 公众号文章下载神器
   text: 
-  tagline: 一款 开源 & 免费 的公众号文章下载工具
+  tagline: 一款 开源 & 免费 的公众号文章下载神器
   image:
     src: /logo.png
     alt: 公众号文章下载

@@ -23,7 +23,7 @@ export default defineConfig({
             { text: "FAQ", link: "/faq" },
         ],
         outline: {
-            label: "本页目录",
+            label: "本页导航",
             level: "deep",
         },
         sidebar: [

@@ -15,6 +15,7 @@ export default defineConfig({
     ignoreDeadLinks: true,
 
     themeConfig: {
+        logo: '/logo.png',
         nav: [
             { text: "开始使用", link: "https://exporter.wxdown.online/" },
             { text: "教程", link: "/get-started/usage" },

@@ -3,7 +3,8 @@
 ::: warning 注意
 
 1. 专业版目前仅支持 **已赞助用户** 部署，功能与网站 (https://exporter.wxdown.online) 完全一致。
-2. 目前仅支持 Docker 部署。
+2. 仅支持 Docker 部署。
+3. 目前正在优化中，暂时不对外开放。
 :::
 
 

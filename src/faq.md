@@ -37,3 +37,18 @@
 ## 出现 Array buffer allocation failed 如何解决？
 
 这个是因为一次性下载太多导致内存不足导致的，属于程序bug，目前正在优化。
+
+## 为什么已加载的消息数和消息总数会差几条呢？
+
+![account list](assets/faq/account-list.png)
+
+![wechat message](assets/faq/wechat-message.png)
+上面这个就是消息，每条消息可能会包含多篇文章，这个列表里面已加载消息数就是指的抓取到的这个消息数量，是准确的，消息总数是微信接口返回的一个字段，叫`total_count`，这个是我猜的消息总数，所以不一定准确。
+
+## 文章下载页面的文章数量为什么不一样？
+
+![](assets/faq/download-count-not-match.png)
+
+这是因为网站设置里默认启用了【隐藏已删除文章】的选项，可以手动关闭这个选项，这两个数字就一致了。
+
+![](assets/faq/setting-hide-deleted.png)

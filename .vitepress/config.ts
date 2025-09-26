@@ -64,6 +64,7 @@ export default defineConfig({
                         link: "/advanced/docker-deploy",
                     },
                     { text: "常见问题", link: "/faq" },
+                    { text: "API 使用说明", link: "/advanced/api" },
                 ],
                 collapsed: false,
             },

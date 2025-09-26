@@ -41,6 +41,7 @@ features:
     linkText: 开始部署
   - title: API (内测中)
     details: 支持通过 API 调用
+    link: /advanced/api
   - title: RSS (计划中)
     details: 支持 RSS 订阅
 ---

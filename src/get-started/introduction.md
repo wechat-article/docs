@@ -9,16 +9,16 @@
 
 ## 开源版 vs 专业版
 
-这个工具采用网站的形式来提供服务，分为开源版和专业版。
+> 目前专业版已完全开源，代码在v2分支
+
+
+这个工具采用网站的形式来提供服务，分为开源版(v1)和专业版(v2)。
 
 **开源版** 提供了基础的数据抓取功能，部署在 Deno Deploy 上面 (https://free-wxdown.deno.dev)。  
 **专业版** 则提供了更多的功能，包括多公众号管理、自动获取Credentials、支持导出更多格式等，部署在 Cloudflare 上面 (https://exporter.wxdown.online)。
 
-专业版目前暂未开源，但已部署成 [网站](https://exporter.wxdown.online)，可永久免费使用。
+~~专业版目前暂未开源，但已部署成 [网站](https://exporter.wxdown.online)，可永久免费使用。~~
 
-::: warning 注意
-根据之前定下的策略，网站中的部分功能是收费的，具体哪些功能需要付费，可以参考 [pro计划](https://github.com/wechat-article/wechat-article-exporter/labels/pro%E8%AE%A1%E5%88%92)。
-:::
 
 ## 公共网站 vs 私有部署
 

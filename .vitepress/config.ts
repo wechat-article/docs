@@ -56,12 +56,12 @@ export default defineConfig({
                         link: "/advanced/wxdown-service",
                     },
                     {
-                        text: "私有部署(开源版)",
-                        link: "/advanced/private-deploy",
+                        text: "私有部署(v1)",
+                        link: "/advanced/private-deploy-v1",
                     },
                     {
-                        text: "私有部署(专业版)",
-                        link: "/advanced/docker-deploy",
+                        text: "私有部署(v2)",
+                        link: "/advanced/private-deploy-v2",
                     },
                     { text: "常见问题", link: "/faq" },
                     { text: "API 使用说明", link: "/advanced/api" },

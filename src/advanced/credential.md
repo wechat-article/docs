@@ -1,9 +1,9 @@
 # 如何获取 Credential 信息
 
 ::: danger 警告
-目前官网已废弃手动抓取 Credential 的方式，该教程仅针对 [私有部署(开源版)](./private-deploy) 的网站。
+目前官网已废弃手动抓取 Credential 的方式，该教程仅针对 [v1版本](https://github.com/wechat-article/wechat-article-exporter/tree/v1.0) 的网站。
 
-若你使用的是官方部署的 [网站](https://exporter.wxdown.online)，或者部署的 [专业版](./docker-deploy)，请参考自动抓取 Credential 教程。
+若你使用的是官方部署的 [网站](https://exporter.wxdown.online)，或者部署的 [v2版本](https://github.com/wechat-article/wechat-article-exporter/tree/v2.0)，请参考自动抓取 Credential 教程。
 :::
 
 `Credentials`即微信用户的个人凭证，是获取文章的评论和阅读量等数据所必需的。下面说明如何使用 [mitmproxy](https://mitmproxy.org/) 获取该数据：

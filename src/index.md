@@ -33,8 +33,8 @@ features:
     details: 导出时支持丰富的过滤条件，包括标题、摘要、发布时间、是否原创、阅读量、点赞量、转发量、作者、文章类型、媒体时长等
   - title: 合集下载
     details: 支持公众号内合集文章的批量下载
-  - title: 内嵌的音视频
-    details: 支持内嵌的音视频下载
+#  - title: 内嵌的音视频
+#    details: 支持内嵌的音视频下载
   - title: 私有化部署
     details: 支持 docker 私有化部署，数据完全由自己控制
     link: /advanced/docker-deploy

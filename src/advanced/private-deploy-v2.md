@@ -85,7 +85,7 @@ npm run dev
 ### 拉取镜像
 
 ```shell
-docker pull ghcr.io/wechat-article/wechat-article-exporter:2.0.1
+docker pull ghcr.io/wechat-article/wechat-article-exporter:latest
 ```
 
 ### 启动容器
@@ -96,10 +96,11 @@ docker pull ghcr.io/wechat-article/wechat-article-exporter:2.0.1
 
 ```shell
 docker run -d --rm \
+  --name wechat-article-exporter \
   -p 3000:3000 \
   --env-file .env \
-  -v ./.data:/app/.data \
-  ghcr.io/wechat-article/wechat-article-exporter:2.0.1
+  -v ./data:/app/.data \
+  ghcr.io/wechat-article/wechat-article-exporter:latest
 ```
 
 

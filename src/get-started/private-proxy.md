@@ -213,3 +213,12 @@ export default {
 ![img_6.png](../assets/private-proxy/img_6.png)
 
 发布成功之后，同样地址栏中的地址即为代理地址。
+
+### WAF 设置
+
+规则名称：Referer+路径限制
+
+规则表达式：
+```
+(not starts_with(http.referer, "https://xxx.domain")) or (http.request.uri.path ne "/")
+```

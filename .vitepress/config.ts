@@ -43,10 +43,10 @@ export default defineConfig({
             {
                 text: "Advanced",
                 items: [
-                    {
-                        text: "获取 Credential 信息",
-                        link: "/advanced/credential",
-                    },
+                    // {
+                    //     text: "获取 Credential 信息",
+                    //     link: "/advanced/credential",
+                    // },
                     {
                         text: "自动抓取 Credential (mitmproxy插件版)",
                         link: "/advanced/auto-detect-credential",
@@ -56,12 +56,8 @@ export default defineConfig({
                         link: "/advanced/wxdown-service",
                     },
                     {
-                        text: "私有部署(v1)",
-                        link: "/advanced/private-deploy-v1",
-                    },
-                    {
-                        text: "私有部署(v2)",
-                        link: "/advanced/private-deploy-v2",
+                        text: "私有部署",
+                        link: "/advanced/private-deploy",
                     },
                     { text: "常见问题", link: "/faq" },
                     { text: "API 使用说明", link: "/advanced/api" },
@@ -90,7 +86,7 @@ export default defineConfig({
         ],
         search: { provider: "local" },
         footer: {
-            // message: 'Released under the MIT License.',
+            message: 'Released under the MIT License.',
             copyright: "版权所有 © 2024-2025 Jock",
         },
 

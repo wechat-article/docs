@@ -11,13 +11,13 @@ hero:
     alt: 公众号文章下载
   actions:
     - theme: brand
-      text: 文档
+      text: 阅读文档
       link: /get-started/usage
     - theme: alt
       text: GitHub
       link: https://github.com/wechat-article/wechat-article-exporter
     - theme: alt
-      text: 前往使用
+      text: 开始使用
       link: https://exporter.wxdown.online/
 
 features:

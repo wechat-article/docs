@@ -37,7 +37,7 @@ features:
 #    details: 支持内嵌的音视频下载
   - title: 私有化部署
     details: 支持 docker 私有化部署，数据完全由自己控制
-    link: /advanced/private-deploy-v2
+    link: /advanced/private-deploy
     linkText: 开始部署
   - title: API (内测中)
     details: 支持通过 API 调用

@@ -78,6 +78,7 @@ export default defineConfig({
                 text: "Misc",
                 items: [
                     { text: "Features", link: "/misc/features" },
+                    // { text: "关于更换域名的一些事", link: "/misc/domain" },
                     { text: "整体架构", link: "/misc/architecture" },
                     { text: "QQ群", link: "/misc/qq-group" },
                 ],

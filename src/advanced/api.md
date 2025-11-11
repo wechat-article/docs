@@ -4,7 +4,7 @@
 
 https://documenter.getpostman.com/view/1276582/2sB3QDuXUa
 
-> `Authorization`即授权之后的`token`
+> `X-Auth-Key`即登录之后获取的的`API密钥`
 
 ## 如何使用这个文档
 

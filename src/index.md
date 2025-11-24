@@ -18,7 +18,7 @@ hero:
       link: https://github.com/wechat-article/wechat-article-exporter
     - theme: alt
       text: 开始使用
-      link: https://exporter.wxdown.online/
+      link: https://down.mptext.top/
 
 features:
   - title: 无需安装

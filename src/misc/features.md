@@ -1,6 +1,6 @@
 # Features
 
-目前该工具为 [网站](https://exporter.wxdown.online/) 形式，具有下面这些功能。
+目前该工具为 [网站](https://down.mptext.top/) 形式，具有下面这些功能。
 
 ## 已实现的功能
 

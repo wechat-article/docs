@@ -17,7 +17,7 @@ export default defineConfig({
     themeConfig: {
         logo: '/logo.png',
         nav: [
-            { text: "开始使用", link: "https://exporter.wxdown.online/" },
+            { text: "开始使用", link: "https://down.mptext.top/" },
             { text: "教程", link: "/get-started/usage" },
             { text: "Features", link: "/misc/features" },
             { text: "FAQ", link: "/faq" },

@@ -13,7 +13,7 @@
 
 ## 2. 二维码扫码登录
 
-注册完公众号之后，进入网站的 [登录页面](https://exporter.wxdown.online/login)，用微信扫描页面上的二维码，选择自己注册的 **公众号** 进行登录。
+注册完公众号之后，进入网站的 [登录页面](https://down.mptext.top/login)，用微信扫描页面上的二维码，选择自己注册的 **公众号** 进行登录。
 
 ::: tip 提示
 注意，这里必须选择 **公众号** 或者 **服务号** 进行登录，不能使用 **小程序** 登录，否则后续无法获取数据。
@@ -38,13 +38,13 @@
 
 ## 4. 添加公众号，开始抓取文章链接
 
-在 [公众号管理](https://exporter.wxdown.online/dashboard/account) 页面添加一个公众号，通过同步按钮拉取该公众号的所有文章链接。
+在 [公众号管理](https://down.mptext.top/dashboard/account) 页面添加一个公众号，通过同步按钮拉取该公众号的所有文章链接。
 
 ![同步文章链接](../assets/usage/sync-article-links.png)
 
 ## 5. 下载文章内容并导出数据
 
-在 [文章下载](https://exporter.wxdown.online/dashboard/article) 页面选择目标公众号，勾选对应的文章，通过右上角的【抓取】下载文章内容，如下图所示：
+在 [文章下载](https://down.mptext.top/dashboard/article) 页面选择目标公众号，勾选对应的文章，通过右上角的【抓取】下载文章内容，如下图所示：
 
 ![抓取文章内容](../assets/usage/download-article-content.png)
 

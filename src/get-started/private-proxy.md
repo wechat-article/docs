@@ -204,6 +204,84 @@ export default {
 返回【URL not found】就表示节点部署成功了，我们的节点地址(url)就可以配置到网站中进行使用了。
 
 
+### 绑定自定义域名
+
+> worker 自动生成的域名(比如上面例子中的`https://gentle-firefly-af03.markortese3.workers.dev`)通常需要翻墙才能访问，通过配置自定义域名，可缓解 cloudflare 域名被墙的问题。
+> 
+> 实测下来，虽然用自定义域名不需要翻墙即可访问，但速度会有一些下降。如果有条件的话，还是开启翻墙软件进行使用。
+
+#### 1. 购买域名
+
+若手里还没有自己的域名，则推荐从 [SpaceShip](https://www.spaceship.com/zh/domain-search/?tab=domains&query=) 处购买，支持支付宝支付。
+可以选择`.site`或者`.online`等后缀的域名，首年价格较低。
+
+#### 2. 将域名添加到 Cloudflare
+
+在【账户主页】点击【加入域】，如下所示：
+
+![](../assets/custom-domain/img.png)
+
+将域名填入，其他保留默认设置，点【继续】：
+
+![](../assets/custom-domain/img_1.png)
+
+选择免费计划：
+
+![](../assets/custom-domain/img_2.png)
+
+最后，需要修改 SpaceShip 上面的设置，如下：
+
+![](../assets/custom-domain/img_3.png)
+
+打开 SpaceShip 上面你刚购买的那个域名的高级DNS设置页面，如下：
+
+![](../assets/custom-domain/img_4.png)
+
+这两处设置对应 Cloudflare 上面要求修改的两处。
+
+![](../assets/custom-domain/img_5.png)
+
+这两处设置完之后，需要等待一段时间，等 Cloudflare 更新就可以了。
+
+之后如果想重新启用域名的 DNSSEC，可以在 Cloudflare 中点下面这里，如下所示：
+
+![](../assets/custom-domain/img_6.png)
+
+会得到一些配置值，如下：
+
+![](../assets/custom-domain/img_7.png)
+
+回到 SpaceShip，在【高级DNS】中添加一条DS记录，如下所示：
+
+![](../assets/custom-domain/img_8.png)
+
+> 【关键标签】对应【密钥标记】
+
+![](../assets/custom-domain/img_9.png)
+
+设置完之后等待就可以了。
+
+到此，我们已成功的将我们的域名托管给 Cloudflare 进行管理了。
+
+#### 3. 给 worker 添加自定义域
+
+在 worker 的设置里，添加【自定义域】，如下：
+
+![](../assets/custom-domain/img_10.png)
+
+这里可以输入任意的二级域名，比如`1235566.space`是我刚注册的域名，我可以在前面添加`00.`表示一条访问节点地址，如下所示：
+
+![](../assets/custom-domain/img_11.png)
+
+添加完之后，我就可以通过`00.1235566.space`访问这个代理节点了，如下：
+
+![](../assets/custom-domain/img_12.png)
+
+你可以在同一个 worker 上面添加多个这样的【自定义域】，这样就会得到多个节点地址。
+比如，公共代理节点的配置如下：
+
+![](../assets/custom-domain/img_13.png)
+
 ### 安全设置
 
 > 针对绑定了自定义域名的账户

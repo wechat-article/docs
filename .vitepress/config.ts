@@ -48,12 +48,12 @@ export default defineConfig({
                     //     link: "/advanced/credential",
                     // },
                     {
-                        text: "自动抓取 Credential (mitmproxy插件版)",
-                        link: "/advanced/auto-detect-credential",
+                        text: "抓取 Credential (wxdown程序版)(推荐)",
+                        link: "/advanced/wxdown-service",
                     },
                     {
-                        text: "自动抓取 Credential (wxdown程序版)",
-                        link: "/advanced/wxdown-service",
+                        text: "抓取 Credential (mitmproxy插件版)",
+                        link: "/advanced/auto-detect-credential",
                     },
                     {
                         text: "私有部署",

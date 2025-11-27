@@ -123,6 +123,6 @@ sudo security add-trusted-cert -d -p ssl -p basic -k /Library/Keychains/System.k
 接着就可以开始抓取该公众号的阅读量和留言数据了。
 
 > 注意：
-> 1. 抓取到的 Credentials 数据有效期为30分钟，过期后就无法再抓取这些数据了。
+> 1. 抓取到的 Credentials 数据有效期为30分钟，过期后就无法再抓取阅读量和留言了。
 > 2. 成功抓取到 Credentials 之后，你可以关闭 wxdown-service 程序。
 > 3. Credentials 过期后，你只需要重新刷新下微信浏览器的文章，就会自动获取新的 Credentials (前提是你没有关闭 wxdown-service 程序，并且也没有修改过操作系统代理)。

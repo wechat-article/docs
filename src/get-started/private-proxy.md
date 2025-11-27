@@ -1,6 +1,8 @@
 # 搭建私有代理节点
 
-私有代理节点部署在各种 serverless 环境，可以加速资源的下载进度。但由于目前节点代码并没有进行身份验证，所以请避免部署后的代理地址遭到泄露。如若发现节点流量异常，请销毁节点重新进行搭建(即更换代理地址)。
+私有代理节点部署在各种 serverless 环境（**都是国外的平台，所以在使用时最好配合翻墙软件**），可以加速资源的下载进度。但由于目前节点代码并没有进行身份验证，所以请避免部署后的节点地址遭到泄露。如若发现节点流量异常，请销毁节点重新进行搭建(即更换节点地址)。
+
+如果使用的 Cloudflare 部署的节点，也可以使用自定义规则限制可访问的域名，详情见下面的安全设置。
 
 ::: details 点我查看节点代码
 ```js
@@ -174,8 +176,48 @@ export default {
 
 目前该节点代码可部署在以下平台：
 
-- [Deno Deploy](https://deno.com/deploy)
 - [Cloudflare Worker](https://workers.cloudflare.com/)
+- [Deno Deploy](https://deno.com/deploy)
+
+> 注意：
+> Deno Deploy 改版后要求 **绑定信用卡** 才可使用之前的免费额度，所以 **推荐使用 Cloudflare 平台搭建节点**。
+> ![](../assets/private-proxy/deno_img.png)
+
+
+## 部署到 Cloudflare Workers
+
+打开控制台的左侧【计算和AI】下面的【Workers 和 Pages】菜单，点击【创建应用程序】，创建一个新的 worker，如下所示：
+
+![](../assets/private-proxy/cf_img_6.png)
+
+选择【从 Hello World! 开始】
+
+![](../assets/private-proxy/cf_img_5.png)
+![](../assets/private-proxy/cf_img_4.png)
+
+部署之后，点击【编辑代码】，将节点的代码替换为我们自己的代码（节点代码从本文档上面拷贝）：
+
+![](../assets/private-proxy/cf_img_7.png)
+
+![](../assets/private-proxy/cf_img_8.png)
+
+返回【URL not found】就表示节点部署成功了，我们的节点地址(url)就可以配置到网站中进行使用了。
+
+
+### 安全设置
+
+> 针对绑定了自定义域名的账户
+
+如果想限制你的私有节点只能被特定域名使用，可以在 Cloudflare 控制台添加过滤规则，如下所示：
+
+![](../assets/private-proxy/cf_img_1.png)
+
+通过限制【引用方】，也就是 HTTP 请求中的`referer`必须为特定域名才可访问。
+
+![](../assets/private-proxy/cf_img_2.png)
+上面这个示例配置表示，只有`https://www.example.com`网站可以使用该节点，其他网站使用时会自动被阻止，一般会返回下面这样的错误：
+
+![](../assets/private-proxy/cf_img_3.png)
 
 
 ## 部署到 Deno Deploy
@@ -198,27 +240,3 @@ export default {
 保存成功后，右侧会出现`URL not found`提示，表示代理搭建完成。
 
 复制右侧地址栏中的地址( https://deep-boa-76.deno.dev )，配置进页面中即可使用。
-
-
-## 部署到 Cloudflare Workers
-
-在控制台的左侧`Workers & Pages`菜单中点击创建 Worker，创建一个新的 worker，如下所示：
-
-![img_3.png](../assets/private-proxy/img_3.png)
-![img_4.png](../assets/private-proxy/img_4.png)
-
-部署之后，点击【编辑代码】，将上面的节点代码粘贴到左侧编辑区：
-
-![img_5.png](../assets/private-proxy/img_5.png)
-![img_6.png](../assets/private-proxy/img_6.png)
-
-发布成功之后，同样地址栏中的地址即为代理地址。
-
-### WAF 设置
-
-规则名称：Referer+路径限制
-
-规则表达式：
-```
-(not starts_with(http.referer, "https://xxx.domain")) or (http.request.uri.path ne "/")
-```

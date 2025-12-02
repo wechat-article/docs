@@ -20,7 +20,7 @@ export default defineConfig({
             { text: "开始使用", link: "https://down.mptext.top/" },
             { text: "教程", link: "/get-started/usage" },
             { text: "Features", link: "/misc/features" },
-            { text: "FAQ", link: "/faq" },
+            { text: "常见问题(FAQ)", link: "/faq" },
         ],
         outline: {
             label: "本页导航",
@@ -59,7 +59,7 @@ export default defineConfig({
                         text: "私有部署",
                         link: "/advanced/private-deploy",
                     },
-                    { text: "常见问题", link: "/faq" },
+                    { text: "常见问题(FAQ)", link: "/faq" },
                     { text: "API 使用说明", link: "/advanced/api" },
                 ],
                 collapsed: false,

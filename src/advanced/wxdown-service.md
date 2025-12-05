@@ -25,7 +25,7 @@
 
 ### 1. 启动软件
 
-可直接双击`wxdown-service.exe`开始执行，启动过程中可能需要一些权限，请全部允许。
+可直接双击`wxdown-service.exe`启动，启动过程中可能需要一些权限，请全部允许。
 
 启动成功后如下所示：
 
@@ -104,7 +104,7 @@ sudo security add-trusted-cert -d -p ssl -p basic -k /Library/Keychains/System.k
 
 ## 抓取 Credentials
 
-当你的`wxdown-service`程序成功运行之后，网站的图标会变成绿色，如下图所示：
+当你的`wxdown-service`程序成功启动之后，网站的图标会变成绿色，如下图所示：
 
 ![](../assets/wxdown-service-credential/img_14.png)
 
@@ -124,5 +124,5 @@ sudo security add-trusted-cert -d -p ssl -p basic -k /Library/Keychains/System.k
 
 > 注意：
 > 1. 抓取到的 Credentials 数据有效期为30分钟，过期后就无法再抓取阅读量和留言了。
-> 2. 成功抓取到 Credentials 之后，你可以关闭 wxdown-service 程序。
+> 2. 成功抓取到 Credentials 之后，该数据会缓存在浏览器中，此时你可以关闭 wxdown-service 程序。
 > 3. Credentials 过期后，你只需要重新刷新下微信浏览器的文章，就会自动获取新的 Credentials (前提是你没有关闭 wxdown-service 程序，并且也没有修改过操作系统代理)。

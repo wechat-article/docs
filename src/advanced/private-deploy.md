@@ -45,10 +45,38 @@ docker run -d --rm \
   ghcr.io/wechat-article/wechat-article-exporter:latest
 ```
 
-
 ## 浏览器访问
 
 浏览器打开 `http://localhost:3000` 即可使用专业版功能。
+
+
+## Vercel 快速部署
+
+### 一键部署
+
+点击下方按钮一键部署到 Vercel：
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/wechat-article/wechat-article-exporter)
+
+### 手动部署
+
+1. Fork 本项目到你的 GitHub 账号
+
+2. 在 Vercel 中导入项目
+   - 访问 [Vercel](https://vercel.com)
+   - 点击 "Add New..." → "Project"
+   - 选择你 Fork 的项目仓库
+
+3. 配置项目
+   - Framework Preset: 选择 `Nuxt.js`
+   - Root Directory: 保持默认 `./`
+   - Build Command: 保持默认或使用 `yarn build`
+   - Output Directory: 保持默认 `.output/public`
+
+4. 配置环境变量（可选）
+   - 在项目设置中添加所需的环境变量（见下方环境变量说明）
+
+5. 点击 "Deploy" 完成部署
 
 
 ## 环境变量

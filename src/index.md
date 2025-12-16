@@ -45,3 +45,8 @@ features:
   - title: RSS (计划中)
     details: 支持 RSS 订阅
 ---
+
+## 投喂 AI
+
+- [llms.txt](/llms.txt)
+- [llms-full.txt](/llms-full.txt)

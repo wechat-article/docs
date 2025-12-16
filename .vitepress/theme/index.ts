@@ -13,9 +13,14 @@ import "vitepress-theme-teek/theme-chalk/tk-nav.css";
 // import "vitepress-theme-teek/theme-chalk/tk-scrollbar.css";
 import "vitepress-theme-teek/theme-chalk/tk-sidebar.css";
 import "vitepress-theme-teek/theme-chalk/tk-table.css";
+// @ts-ignore
+import CopyOrDownloadAsMarkdownButtons from 'vitepress-plugin-llms/vitepress-components/CopyOrDownloadAsMarkdownButtons.vue'
 
 
 export default {
     extends: DefaultTheme,
     Layout,
+    enhanceApp({ app }) {
+        app.component('CopyOrDownloadAsMarkdownButtons', CopyOrDownloadAsMarkdownButtons)
+    }
 };

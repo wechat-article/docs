@@ -1,6 +1,8 @@
 import {defineConfig} from 'vitepress'
 
+import llmstxt, {copyOrDownloadAsMarkdownButtons} from 'vitepress-plugin-llms'
 import lightbox from "vitepress-plugin-lightbox";
+
 
 export default defineConfig({
     lang: "zh-CN",
@@ -10,17 +12,17 @@ export default defineConfig({
     srcDir: "src",
 
     head: [
-        ["link", { rel: "icon", href: "/favicon.ico" }],
+        ["link", {rel: "icon", href: "/favicon.ico"}],
     ],
     ignoreDeadLinks: true,
 
     themeConfig: {
         logo: '/logo.png',
         nav: [
-            { text: "开始使用", link: "https://down.mptext.top/" },
-            { text: "教程", link: "/get-started/usage" },
-            { text: "Features", link: "/misc/features" },
-            { text: "常见问题(FAQ)", link: "/faq" },
+            {text: "开始使用", link: "https://down.mptext.top/"},
+            {text: "教程", link: "/get-started/usage"},
+            {text: "Features", link: "/misc/features"},
+            {text: "常见问题(FAQ)", link: "/faq"},
         ],
         outline: {
             label: "本页导航",
@@ -30,9 +32,9 @@ export default defineConfig({
             {
                 text: "Getting Started",
                 items: [
-                    { text: "介绍", link: "/get-started/introduction" },
-                    { text: "快速上手", link: "/get-started/usage" },
-                    { text: "关于代理节点", link: "/get-started/proxy" },
+                    {text: "介绍", link: "/get-started/introduction"},
+                    {text: "快速上手", link: "/get-started/usage"},
+                    {text: "关于代理节点", link: "/get-started/proxy"},
                     {
                         text: "搭建私有代理节点",
                         link: "/get-started/private-proxy",
@@ -59,8 +61,8 @@ export default defineConfig({
                         text: "私有部署",
                         link: "/advanced/private-deploy",
                     },
-                    { text: "常见问题(FAQ)", link: "/faq" },
-                    { text: "API 使用说明", link: "/advanced/api" },
+                    {text: "常见问题(FAQ)", link: "/faq"},
+                    {text: "API 使用说明", link: "/advanced/api"},
                 ],
                 collapsed: false,
             },
@@ -77,15 +79,15 @@ export default defineConfig({
             {
                 text: "Misc",
                 items: [
-                    { text: "Features", link: "/misc/features" },
-                    { text: "关于更换域名的一些事", link: "/misc/domain" },
-                    { text: "整体架构", link: "/misc/architecture" },
-                    { text: "QQ群", link: "/misc/qq-group" },
+                    {text: "Features", link: "/misc/features"},
+                    {text: "关于更换域名的一些事", link: "/misc/domain"},
+                    {text: "整体架构", link: "/misc/architecture"},
+                    {text: "QQ群", link: "/misc/qq-group"},
                 ],
                 collapsed: false,
             },
         ],
-        search: { provider: "local" },
+        search: {provider: "local"},
         footer: {
             message: 'Released under the MIT License.',
             copyright: "版权所有 © 2024-2025 Jock",
@@ -99,13 +101,14 @@ export default defineConfig({
         lastUpdated: {
             text: "最后更新于",
             formatOptions: {
+                // @ts-ignore
                 dateStyle: "medium",
                 timeStyle: "short",
             },
         },
 
         socialLinks: [
-            { icon: "github", link: "https://github.com/wechat-article" },
+            {icon: "github", link: "https://github.com/wechat-article"},
         ],
 
         externalLinkIcon: true,
@@ -115,10 +118,14 @@ export default defineConfig({
         config: (md) => {
             // Use lightbox plugin
             md.use(lightbox, {});
+            md.use(copyOrDownloadAsMarkdownButtons)
         },
         lineNumbers: true,
         image: {
             lazyLoading: true,
         },
     },
+    vite: {
+        plugins: [llmstxt()]
+    }
 });

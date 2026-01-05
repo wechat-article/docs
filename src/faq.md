@@ -77,3 +77,14 @@
 
 这一步做完之后，就可以在页面上进行操作了，比如抓取评论。操作完成后，网络面板就会记录所有的网络请求，可以点开对应的网络请求查看返回的具体内容。
 如果对网络请求不了解，也可以将请求的内容截图发群里咨询大佬们解答。
+
+## 请求出现`429`状态码
+
+公共代理当天的额度用完了，要么搭建自己专属的私有代理([搭建私有代理](get-started/private-proxy.md))，要么等第二天8点刷新额度。
+
+参考 https://github.com/wechat-article/wechat-article-exporter/issues/119
+
+## 目标公众号 Credential 未设置
+
+出现在抓取【阅读量】或【留言内容】时，表示该公众号对应的`Credential`还未获取到，或者已过期。
+参考 [抓取 Credential](advanced/wxdown-service.md) 教程设置该公众号的Credential，然后再抓取相关数据。

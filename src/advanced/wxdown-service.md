@@ -1,6 +1,6 @@
 # 抓取 Credential - wxdown 程序版
 
-为了更好的使用体验，我用 python 编写了一个独立的控制台程序，用来抓取公众号的 Credential 数据，该程序打包了 mitmproxy，可独立运行，具体操作可查看以下内容：
+为了更方便的获取`Credential`，我用 python 编写了一个独立的控制台程序，该程序打包了 mitmproxy，可独立运行，具体操作可查看以下内容：
 
 
 ::: tip 提示

@@ -47,6 +47,8 @@ docker pull ghcr.io/wechat-article/wechat-article-exporter:latest
 
 ```shell
 docker run -d --rm \
+  --restart always \
+  --network host \
   --name wechat-article-exporter \
   -p 3000:3000 \
   -v .data:/app/.data \
@@ -56,6 +58,100 @@ docker run -d --rm \
 ## 浏览器访问
 
 浏览器打开 `http://localhost:3000` 即可使用专业版功能。
+
+
+## docker compose + mkcert 自签名证书
+
+### 使用`mkcert`生成自签名证书
+
+> `mkcert`的安装及使用可以查看[官方文档](https://github.com/FiloSottile/mkcert?tab=readme-ov-file#mkcert)
+
+```shell
+# 在系统中安装根证书(只需执行一次)
+mkcert -install
+```
+
+执行以下代码生成本地 IP 对应的证书文件:
+```shell
+# 这里可以列出你最终访问的ip
+mkcert localhost 127.0.0.1 ::1
+```
+
+该命令会生成2个`pem`文件，分别对应证书和密钥文件，如下图所示:
+![](../assets/private-proxy/mkcert-snapshot.png)
+
+将这两个文件重命名为`cert.pem`和`key.pem`，并放在`certs`目录中。
+
+### 拷贝`nginx.conf`和`docker-compose.yaml`文件
+
+```nginx configuration
+# nginx.conf 文件
+server {
+    listen 80;
+    server_name localhost;
+
+    # HTTP 自动重定向到 HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name localhost;
+
+    # SSL 证书路径（根据你实际文件名调整）
+    ssl_certificate /etc/nginx/certs/cert.pem;
+    ssl_certificate_key /etc/nginx/certs/key.pem;
+
+    # 推荐的 SSL 配置（增强安全性）
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    location / {
+        proxy_pass http://app:3000;  # 代理到应用容器
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Host $host;
+    }
+}
+```
+
+```yaml
+# docker-compose.yml 文件
+services:
+  app:
+    image: ghcr.io/wechat-article/wechat-article-exporter:latest
+    restart: always
+    volumes:
+      # 持久化 KV 数据（防止容器重启丢失）
+      - .data:/app/.data
+
+  nginx:
+    image: nginx:alpine
+    container_name: wechat-article-nginx
+    restart: always
+    ports:
+      - "80:80"    # HTTP（会自动重定向到 HTTPS）
+      - "443:443"  # HTTPS
+    volumes:
+      - ./certs:/etc/nginx/certs:ro          # 挂载证书（只读）
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro  # 挂载配置
+    depends_on:
+      - app
+```
+
+将以上所有文件放在一个目录中，比如`app`目录，最终的目录结构如下:
+```text
+app
+├── certs
+│   ├── cert.pem
+│   └── key.pem
+├── docker-compose.yml
+└── nginx.conf
+```
+在该目录中执行`docker compose up -d`启动，然后就可以通过`https://localhost`(或者你的本地ip)访问 https 网站程序了。
 
 
 ## Vercel 快速部署

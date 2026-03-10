@@ -282,6 +282,13 @@ export default {
 
 ![](../assets/custom-domain/img_13.png)
 
+#### 配置通配符路由(可选)
+
+![](../assets/private-proxy/cf-route_1.png)
+![](../assets/private-proxy/cf-route_2.png)
+
+这样就不需要手动添加二级域名了。
+
 ### 安全设置
 
 > 针对绑定了自定义域名的账户

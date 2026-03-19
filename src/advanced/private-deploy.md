@@ -46,7 +46,7 @@ docker pull ghcr.io/wechat-article/wechat-article-exporter:latest
 > 容器暴露的端口号为3000，内部存储目录为/app/.data
 
 ```shell
-docker run -d --rm \
+docker run -d \
   --restart always \
   --network host \
   --name wechat-article-exporter \

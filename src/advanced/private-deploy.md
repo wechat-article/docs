@@ -51,7 +51,7 @@ docker run -d \
   --network host \
   --name wechat-article-exporter \
   -p 3000:3000 \
-  -v .data:/app/.data \
+  -v ./.data:/app/.data \
   ghcr.io/wechat-article/wechat-article-exporter:latest
 ```
 

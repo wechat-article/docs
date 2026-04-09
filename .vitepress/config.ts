@@ -119,6 +119,13 @@ export default defineConfig({
         ],
 
         externalLinkIcon: true,
+
+        notFound: {
+            title: "页面不存在",
+            quote: "看起来你访问的页面已经被移动或者不存在，请检查链接是否正确。",
+            linkLabel: "返回首页",
+            linkText: "返回首页",
+        },
     },
 
     markdown: {

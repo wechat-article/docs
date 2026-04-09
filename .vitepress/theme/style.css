@@ -146,21 +146,80 @@
  * 侧边栏
  * -------------------------------------------------------------------------- */
 
-.VPSidebar .VPSidebarItem.is-active > .item > .indicator {
-    background-color: var(--vp-c-brand-1);
-    width: 3px;
-    border-radius: 2px;
+/* 整体容器 */
+.VPSidebar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--vp-c-divider) transparent;
 }
 
+/* 分组标题（level-0）— 小号标签风格 */
+.VPSidebarItem.level-0 > .item .text {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em;
+    color: var(--vp-c-text-3) !important;
+}
+
+/* 分组标题含激活子项时使用品牌色 */
+.VPSidebarItem.level-0.has-active > .item .text {
+    color: var(--vp-c-brand-1) !important;
+}
+
+/* 折叠箭头精细化 */
+.VPSidebarItem .caret {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.VPSidebarItem .caret:hover {
+    background-color: var(--vp-c-default-soft);
+}
+
+/* 子项链接 */
 .VPSidebarItem .item .link {
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
     border-radius: 6px;
     padding: 4px 8px 4px 12px;
     margin: 0 -8px 0 -12px;
 }
 
 .VPSidebarItem .item .link:hover {
+    background-color: var(--vp-c-default-soft);
+    color: var(--vp-c-brand-1);
+}
+
+/* 激活指示条 */
+.VPSidebar .VPSidebarItem.is-active > .item > .indicator {
+    background-color: var(--vp-c-brand-1);
+    width: 3px;
+    border-radius: 2px;
+}
+
+/* 激活项背景 + 文字品牌色 */
+.VPSidebarItem.is-active > .item > .link {
     background-color: var(--vp-c-brand-soft);
+    font-weight: 600;
+}
+
+.VPSidebarItem.is-active > .item > .link .text {
+    color: var(--vp-c-brand-1);
+}
+
+/* 嵌套层级左边线 — 更柔和 */
+.VPSidebarItem .items {
+    border-left-color: var(--vp-c-default-soft) !important;
+}
+
+/* 分组间距 */
+.VPSidebar .group + .group {
+    padding-top: 8px;
+}
+
+/* 分组分隔线 — 更细更柔和 */
+.VPSidebar .group + .group::before {
+    border-top-color: var(--vp-c-default-soft);
 }
 
 /**

@@ -57,6 +57,11 @@ npm run build
 npm run preview
 ```
 
+## 代码规范
+
+- **TypeScript 零容忍**：遇到任何 TS 错误必须立即修复，无论是否由当前改动引入。不允许使用 `@ts-ignore` 或 `@ts-expect-error` 来绕过，除非第三方库确实缺少类型声明
+- 所有 `.ts` 和 `.vue` 文件必须通过 TypeScript 类型检查
+
 ## 编写规范
 
 - 所有文档内容使用 **中文** 撰写

@@ -133,6 +133,19 @@ export default defineConfig({
         },
     },
     vite: {
-        plugins: [llmstxt()]
+        plugins: [
+            llmstxt(),
+            {
+                name: 'markdown-charset',
+                configureServer(server) {
+                    server.middlewares.use((req: { url?: string }, res, next) => {
+                        if (req.url?.endsWith('.md') || req.url?.endsWith('.txt')) {
+                            res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+                        }
+                        next()
+                    })
+                },
+            },
+        ],
     }
 });

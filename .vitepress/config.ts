@@ -13,6 +13,14 @@ export default defineConfig({
 
     head: [
         ["link", {rel: "icon", href: "/favicon.ico"}],
+        ["meta", {property: "og:type", content: "website"}],
+        ["meta", {property: "og:title", content: "公众号文章下载"}],
+        ["meta", {property: "og:description", content: "一款开源 & 免费的在线公众号文章下载工具"}],
+        ["meta", {property: "og:url", content: "https://down.mptext.top/"}],
+        ["meta", {property: "og:image", content: "/logo.png"}],
+        ["meta", {name: "twitter:card", content: "summary"}],
+        ["meta", {name: "twitter:title", content: "公众号文章下载"}],
+        ["meta", {name: "twitter:description", content: "一款开源 & 免费的在线公众号文章下载工具"}],
     ],
     ignoreDeadLinks: true,
 
@@ -21,7 +29,7 @@ export default defineConfig({
         nav: [
             {text: "开始使用", link: "https://down.mptext.top/"},
             {text: "教程", link: "/get-started/usage"},
-            {text: "Features", link: "/misc/features"},
+            {text: "功能特性", link: "/misc/features"},
             {text: "常见问题(FAQ)", link: "/faq"},
         ],
         outline: {
@@ -30,7 +38,7 @@ export default defineConfig({
         },
         sidebar: [
             {
-                text: "Getting Started",
+                text: "快速入门",
                 items: [
                     {text: "介绍", link: "/get-started/introduction"},
                     {text: "快速上手", link: "/get-started/usage"},
@@ -43,7 +51,7 @@ export default defineConfig({
                 collapsed: false,
             },
             {
-                text: "Advanced",
+                text: "进阶使用",
                 items: [
                     // {
                     //     text: "获取 Credential 信息",
@@ -67,7 +75,7 @@ export default defineConfig({
                 collapsed: false,
             },
             {
-                text: "Tutorials",
+                text: "教程",
                 items: [
                     {
                         text: "如何批量导出某个公众号的全部文章链接？",
@@ -77,9 +85,9 @@ export default defineConfig({
                 collapsed: false,
             },
             {
-                text: "Misc",
+                text: "其他",
                 items: [
-                    {text: "Features", link: "/misc/features"},
+                    {text: "功能特性", link: "/misc/features"},
                     {text: "关于更换域名的一些事", link: "/misc/domain"},
                     {text: "整体架构", link: "/misc/architecture"},
                     {text: "QQ群", link: "/misc/qq-group"},
@@ -90,7 +98,7 @@ export default defineConfig({
         search: {provider: "local"},
         footer: {
             message: 'Released under the MIT License.',
-            copyright: "版权所有 © 2024-2025 Jock",
+            copyright: "版权所有 © 2024-2026 Jock",
         },
 
         editLink: {
@@ -101,7 +109,6 @@ export default defineConfig({
         lastUpdated: {
             text: "最后更新于",
             formatOptions: {
-                // @ts-ignore
                 dateStyle: "medium",
                 timeStyle: "short",
             },

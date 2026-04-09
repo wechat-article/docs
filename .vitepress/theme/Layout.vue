@@ -1,12 +1,11 @@
 <script lang="ts" setup>
 import DefaultTheme from "vitepress/theme";
-import {nextTick, onMounted, provide} from "vue";
-import {useData, useRouter} from "vitepress";
+import {nextTick, provide} from "vue";
+import {useData, onContentUpdated} from "vitepress";
 import mediumZoom from "medium-zoom";
 import Comments from "./Comments.vue";
 
 const {Layout} = DefaultTheme;
-const router = useRouter();
 
 const {isDark} = useData()
 
@@ -50,11 +49,8 @@ const setupMediumZoom = () => {
   });
 };
 
-// Apply medium zoom on load
-onMounted(setupMediumZoom);
-
-// Subscribe to route changes to re-apply medium zoom effect
-router.onAfterRouteChanged = setupMediumZoom;
+// Apply medium zoom on load and re-apply on route changes
+onContentUpdated(setupMediumZoom);
 </script>
 
 <template>

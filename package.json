@@ -4,6 +4,7 @@
   "repository": "git@github.com:wechat-article/docs.git",
   "author": "jock",
   "license": "UNLICENSED",
+  "packageManager": "yarn@1.22.22",
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",

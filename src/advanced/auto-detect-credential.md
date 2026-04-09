@@ -1,58 +1,69 @@
 # 抓取 Credential - mitmproxy 插件版
 
-> 注意：本文档内容可能已过时。
+::: warning 推荐使用 wxdown 程序版
+本方案需要手动安装和配置 mitmproxy，操作较为复杂。推荐使用更简单的 [wxdown 程序版](wxdown-service)，该方案内置了 mitmproxy，开箱即用。
+:::
 
-这是一个 mitmproxy 插件，用来获取公众号的 Credential 数据，从而省去了手动抓包并解析相关参数的繁琐步骤，具体操作可查看以下内容：
+这是一个 mitmproxy 插件方案，通过加载 `credential.py` 插件来自动抓取公众号的 Credential 数据。
 
-打开网站的任意一个页面，都会发现右上角有一个4个小方块的图标，如下图所示：
+## 两种方案对比
 
-![](../assets/auto-detect-credential/img.png)
+| 项目 | wxdown 程序版（推荐） | mitmproxy 插件版 |
+|------|------|------|
+| 安装难度 | 低（下载即用） | 高（需安装 mitmproxy） |
+| 系统支持 | Windows / macOS | 任意平台 |
+| 适用场景 | 大多数用户 | 已有 mitmproxy 环境的开发者 |
 
-该图标可在页面上任意拖动位置，松开时会自动停靠在窗口边缘，点击时会打开【自动抓取 Credential】的信息面板，如下图所示：
+## 使用步骤
 
-![](../assets/auto-detect-credential/img_3.png)
+### 1. 启动 mitmproxy
 
-我们需要下载这个 mitmproxy 插件，该插件的名字为`credential.py`，下载后，执行以下命令启动`mitmproxy`并加载该插件：
+下载 `credential.py` 插件后，执行以下命令启动 mitmproxy 并加载插件：
 
 ```shell
 mitmdump -s credential.py -q
 ```
 
-执行后的结果如下：
+启动后会输出一个会话密钥：
 
 ![](../assets/auto-detect-credential/img_4.png)
 
-可以看到输出一个会话密钥，我们将该密钥填入上面弹框中的`API Key`的输入框中，然后点击【认证】按钮，认证成功后就可以开始进行监控了，如下图所示：
+### 2. 在网站中认证
+
+网站右上角有一个四方块图标，点击可打开「自动抓取 Credential」面板：
+
+![](../assets/auto-detect-credential/img.png)
+
+![](../assets/auto-detect-credential/img_3.png)
+
+将会话密钥填入 `API Key` 输入框中，点击【认证】按钮：
 
 ![](../assets/auto-detect-credential/img_5.png)
 
-此时我们需要将系统的代理设置为 mitmproxy 的代理，地址为`127.0.0.1:8080`，如下所示：
+### 3. 设置系统代理
+
+将操作系统的代理设置为 mitmproxy 的监听地址 `127.0.0.1:8080`：
 
 ![](../assets/auto-detect-credential/img_6.png)
 
-然后我们就可以在微信中打开目标公众号的任意一篇文章（注意，必须在微信内置浏览器中打开），如果没有监控到的话，就手动刷新一下文章页面，如下图所示：
+### 4. 抓取 Credential
+
+在微信内置浏览器中打开目标公众号的任意一篇文章。如果未自动抓取到，手动刷新文章页面即可：
 
 ![](../assets/auto-detect-credential/img_7.png)
 
-表示成功抓取到了公众号的 Credential 数据了。
-
-**之后如果发现某个公众号的 Credential 过期了，直接在微信内重新打开他的一篇文章，就可以自动获取到他的最新 Credential 数据了。**
-
-这样在下载文章及评论数据时，就会自动使用该信息进行抓取。
+抓取成功后，后续只需在微信中重新打开文章即可自动刷新过期的 Credential。
 
 ::: warning 注意
-由于浏览器对定时器执行频率会有限频，所以最好打开页面的控制台，这样可以防止浏览器休眠页面上的定时器
+请保持网站页面处于活跃状态。由于浏览器会限制后台页面的定时器执行频率，建议打开浏览器的开发者工具（F12）以防止页面被休眠。
 :::
 
-## 特别说明
+## 图标状态说明
 
-上面提到的那个四个方块的图标共有3种状态，对应不同颜色
+网站右上角的四方块图标有 3 种颜色状态：
 
-1. 灰色
-表示非监听状态
-
-2. 蓝色
-表示正在进行监听，且有效数据大于0
-
-3. 橙色
-表示正在监听，且有效数据等于0
+| 颜色 | 含义 |
+|------|------|
+| 灰色 | 未连接，不在监听状态 |
+| 蓝色 | 正在监听，已抓取到有效数据 |
+| 橙色 | 正在监听，但尚未抓取到数据 |

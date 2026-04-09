@@ -1,47 +1,37 @@
 # 关于代理节点
 
-数据的下载采用代理池的思路，以便解决跨域、防盗链、加速等一系列问题。
+## 代理节点的作用
 
-目前公共代理有以下节点（根据实际部署情况，可能会有增删，具体可查看网站后台的公共代理页面）:
+微信公众号文章的图片和内容存在跨域限制和防盗链机制，浏览器无法直接下载这些资源。代理节点充当中间转发层，帮助你绕过这些限制，实现文章内容和图片的正常下载。
+
+系统采用 **代理池** 机制管理多个代理节点：
+- 自动轮询：按最少失败次数 + 最久未使用的策略选择最优节点
+- 故障转移：单个节点连续失败 5 次后自动进入 10 分钟冷却期
+- 负载均衡：节点越多，并发下载越快
+
+## 公共代理节点
+
+目前公共代理节点全部部署在 Cloudflare Workers 上，共部署了 6 个账号：
+
+> 根据实际部署情况，可能会有增删，具体可查看网站后台的【公共代理】页面
+
 ```
-https://00.workers-proxy.top
-https://01.workers-proxy.top
-https://02.workers-proxy.top
-https://03.workers-proxy.top
-https://04.workers-proxy.top
-https://05.workers-proxy.top
-https://06.workers-proxy.top
-https://07.workers-proxy.top
-https://08.workers-proxy.top
-https://09.workers-proxy.top
-https://10.workers-proxy.top
-https://11.workers-proxy.top
-https://12.workers-proxy.top
-https://13.workers-proxy.top
-https://14.workers-proxy.top
-https://15.workers-proxy.top
-https://00.workers-proxy.ggff.net
-https://01.workers-proxy.ggff.net
-https://02.workers-proxy.ggff.net
-https://03.workers-proxy.ggff.net
-https://04.workers-proxy.ggff.net
-https://05.workers-proxy.ggff.net
-https://06.workers-proxy.ggff.net
-https://07.workers-proxy.ggff.net
-https://08.workers-proxy.ggff.net
-https://09.workers-proxy.ggff.net
-https://10.workers-proxy.ggff.net
-https://11.workers-proxy.ggff.net
-https://12.workers-proxy.ggff.net
-https://13.workers-proxy.ggff.net
-https://14.workers-proxy.ggff.net
-https://15.workers-proxy.ggff.net
+https://*.worker-proxy.asia
+https://*.net-proxy.asia
+https://*.1235566.space
+https://*.worker-proxy.shop
+https://*.worker-proxys.cyou
+https://*.worker-proxy.cyou
 ```
 
-::: warning 注意
-这些节点全部部署在 CF 的免费账户中，每天有 100K 的请求量，超过额度之后需要等到下个周期刷新。
+::: warning 公共代理使用限制
+- 每个节点基于 Cloudflare Workers 免费计划，**每天共 10 万次请求**（所有用户共享）
+- 额度用完后会返回 `429` 状态码，需等待次日 UTC 0:00（北京时间 8:00）刷新
+- **公共节点仅限官网 (down.mptext.top) 使用**，私有部署请搭建自己的节点
+:::
 
-**这些节点仅供官网使用，私有部署时请搭建自己的节点。**
+## 搭建私有代理
+
+如果公共代理不够用，或者你需要私有部署，推荐搭建自己的代理节点。每个 Cloudflare 免费账号可创建多个 Worker，操作简单且完全免费。
 
 查看 [搭建私有代理节点](private-proxy) 教程。
-:::

@@ -1,39 +1,35 @@
 # 私有部署
 
 ::: warning 注意
-公共代理节点仅限于以下域名使用:
-- https://down.mptext.top
-- http://localhost
-- http://127.0.0.1
+公共代理节点仅限于以下域名使用：
+- `https://down.mptext.top`
+- `http://localhost`
+- `http://127.0.0.1`
 
-如果私有部署后访问的域名不在以上名单中，则需要使用自己搭建的节点。
+如果私有部署后使用其他域名访问，需要 [搭建自己的代理节点](../get-started/private-proxy)。
 :::
 
 ## 本地运行
 
-> 需要 node >=22 环境
-
-### 拉取代码
+适合开发者调试或临时使用，需要 Node.js >= 22 环境。
 
 ```shell
+# 拉取代码
 git clone git@github.com:wechat-article/wechat-article-exporter.git
-```
+cd wechat-article-exporter
 
-### 安装依赖
-
-```shell
+# 安装依赖
 yarn
-```
 
-
-### 启动
-
-```shell
+# 启动开发服务器
 yarn dev
 ```
 
+启动后打开 `http://localhost:3000` 即可使用。
 
-## docker 运行
+## Docker 运行（推荐）
+
+适合长期使用，无需搭建开发环境。
 
 ### 拉取镜像
 
@@ -43,21 +39,33 @@ docker pull ghcr.io/wechat-article/wechat-article-exporter:latest
 
 ### 启动容器
 
-> 容器暴露的端口号为3000，内部存储目录为/app/.data
+容器暴露端口 3000，内部数据目录为 `/app/.data`。
 
-```shell
+::: code-group
+```shell [Linux]
 docker run -d \
   --restart always \
-  --network host \
   --name wechat-article-exporter \
   -p 3000:3000 \
   -v ./.data:/app/.data \
   ghcr.io/wechat-article/wechat-article-exporter:latest
 ```
 
-## 浏览器访问
+```shell [macOS / Windows]
+docker run -d \
+  --restart always \
+  --name wechat-article-exporter \
+  -p 3000:3000 \
+  -v ./.data:/app/.data \
+  ghcr.io/wechat-article/wechat-article-exporter:latest
+```
+:::
 
-浏览器打开 `http://localhost:3000` 即可使用专业版功能。
+::: tip 提示
+`-v ./.data:/app/.data` 会将容器内的数据映射到当前目录的 `.data` 文件夹，确保容器重启后数据不丢失。
+:::
+
+启动后打开 `http://localhost:3000` 即可使用。
 
 
 ## docker compose + mkcert 自签名证书
@@ -185,49 +193,49 @@ app
 
 ## 环境变量
 
-某些功能需要设置环境变量，比如访客统计、错误日志上报、AG-Grid授权码等。
+以下环境变量均为可选项。本地运行时在项目根目录创建 `.env` 文件即可；Docker 运行时通过 `--env-file .env` 传入。
 
-以下列出了所有支持的环境变量，本地运行时可直接在项目根目录创建`.env`文件，docker运行时可通过`--env-file .env`选项传入环境变量启动。
+### 数据存储（KV）
+
+登录会话等数据通过 KV 存储持久化，不同部署方式配置不同：
+
+```dotenv
+# 本地 / Docker 部署（基于文件系统）
+NITRO_KV_DRIVER=fs
+NITRO_KV_BASE=.data/kv
+
+# Cloudflare 部署（使用 Cloudflare KV）
+# NITRO_KV_DRIVER=cloudflare-kv-binding
+```
+
+### 调试模式
+
+```dotenv
+# 调试微信代理请求（仅开发环境生效）
+NUXT_DEBUG_MP_REQUEST=true
+```
 
 ### AG-Grid 企业版授权
 
 ```dotenv
-# AG-Grid 企业版授权
+# 文章列表使用 AG-Grid 展示，企业版授权可解锁更多功能
 NUXT_AGGRID_LICENSE=
 ```
 
-### 调试微信代理请求(仅开发环境支持)
+### 网站统计（umami）
 
 ```dotenv
-# 调试微信代理请求 (仅开发环境(development)支持)
-NUXT_DEBUG_MP_REQUEST=true
-```
-
-### umami 网站统计
-
-```dotenv
-# umami 网站统计
 # https://umami.nuxt.dev/api/configuration
 NUXT_UMAMI_ID=
 NUXT_UMAMI_HOST=
 ```
 
-### sentry
+### 错误监控（Sentry）
+
 ```dotenv
-# sentry
 # https://docs.sentry.io/platforms/javascript/guides/nuxt/manual-setup/
 NUXT_SENTRY_DSN=
 NUXT_SENTRY_ORG=
 NUXT_SENTRY_PROJECT=
 NUXT_SENTRY_AUTH_TOKEN=
-```
-
-### kv绑定
-```dotenv
-# KV绑定(本地/docker)
-NITRO_KV_DRIVER=fs
-NITRO_KV_BASE=.data/kv
-
-# KV绑定(cloudflare)
-#NITRO_KV_DRIVER=cloudflare-kv-binding
 ```

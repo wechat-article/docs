@@ -1,6 +1,5 @@
 import DefaultTheme from "vitepress/theme";
 import Layout from "./Layout.vue";
-// import './style.css'
 import 'vitepress-theme-teek/index.css'
 
 // .vitepress/theme/index.ts

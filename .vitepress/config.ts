@@ -95,7 +95,7 @@ export default defineConfig({
 
         editLink: {
             pattern:
-                "https://github.com/wechat-article/docs/edit/main/docs/:path",
+                "https://github.com/wechat-article/docs/edit/master/src/:path",
             text: "在 GitHub 上编辑该页面",
         },
         lastUpdated: {

@@ -1,46 +1,5 @@
 /**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
- */
-
-/**
- * Colors
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- *
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *   It must satisfy the contrast ratio with pure white (#ffffff) text on
- *   top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *   on top of it.
- *
- *   The soft color must be semi transparent alpha channel. This is crucial
- *   because it allows adding multiple "soft" colors on top of each other
- *   to create a accent, such as when having inline code block inside
- *   custom containers.
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attached to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
+ * 品牌色 — 科技蓝
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -49,10 +8,10 @@
     --vp-c-default-3: var(--vp-c-gray-3);
     --vp-c-default-soft: var(--vp-c-gray-soft);
 
-    --vp-c-brand-1: var(--vp-c-indigo-1);
-    --vp-c-brand-2: var(--vp-c-indigo-2);
-    --vp-c-brand-3: var(--vp-c-indigo-3);
-    --vp-c-brand-soft: var(--vp-c-indigo-soft);
+    --vp-c-brand-1: #2563eb;
+    --vp-c-brand-2: #3b82f6;
+    --vp-c-brand-3: #1d4ed8;
+    --vp-c-brand-soft: rgba(37, 99, 235, 0.12);
 
     --vp-c-tip-1: var(--vp-c-brand-1);
     --vp-c-tip-2: var(--vp-c-brand-2);
@@ -70,8 +29,15 @@
     --vp-c-danger-soft: var(--vp-c-red-soft);
 }
 
+.dark {
+    --vp-c-brand-1: #60a5fa;
+    --vp-c-brand-2: #3b82f6;
+    --vp-c-brand-3: #2563eb;
+    --vp-c-brand-soft: rgba(96, 165, 250, 0.12);
+}
+
 /**
- * Component: Button
+ * 按钮
  * -------------------------------------------------------------------------- */
 
 :root {
@@ -87,56 +53,231 @@
 }
 
 /**
- * Component: Home
+ * 首页 Hero
  * -------------------------------------------------------------------------- */
 
 :root {
     --vp-home-hero-name-color: transparent;
     --vp-home-hero-name-background: -webkit-linear-gradient(
             120deg,
-            #bd34fe 30%,
-            #41d1ff
+            #2563eb 30%,
+            #06b6d4
     );
 
     --vp-home-hero-image-background-image: linear-gradient(
             -45deg,
-            #bd34fe 50%,
-            #47caff 50%
+            rgba(37, 99, 235, 0.4) 50%,
+            rgba(6, 182, 212, 0.4) 50%
     );
-    --vp-home-hero-image-filter: blur(44px);
+    --vp-home-hero-image-filter: blur(56px);
 }
 
 @media (min-width: 640px) {
-    :root {
-        --vp-home-hero-image-filter: blur(56px);
-    }
-}
-
-@media (min-width: 960px) {
     :root {
         --vp-home-hero-image-filter: blur(68px);
     }
 }
 
+@media (min-width: 960px) {
+    :root {
+        --vp-home-hero-image-filter: blur(80px);
+    }
+}
+
 /**
- * Component: Custom Block
+ * 提示块
  * -------------------------------------------------------------------------- */
 
 :root {
-    --vp-custom-block-tip-border: transparent;
+    --vp-custom-block-tip-border: var(--vp-c-brand-1);
     --vp-custom-block-tip-text: var(--vp-c-text-1);
     --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
     --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
 }
 
+.custom-block.tip {
+    border-left: 4px solid var(--vp-c-brand-1);
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.custom-block.warning {
+    border-left: 4px solid var(--vp-c-warning-1);
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.custom-block.danger {
+    border-left: 4px solid var(--vp-c-danger-1);
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
 /**
- * Component: Algolia
+ * 搜索
  * -------------------------------------------------------------------------- */
 
 .DocSearch {
     --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * 导航栏 — 毛玻璃
+ * -------------------------------------------------------------------------- */
+
+.VPNav .VPNavBar {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+}
+
+.dark .VPNav .VPNavBar {
+    background-color: rgba(27, 27, 31, 0.75) !important;
+}
+
+.VPNav .VPNavBar .divider {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/**
+ * 侧边栏
+ * -------------------------------------------------------------------------- */
+
+.VPSidebar .VPSidebarItem.is-active > .item > .indicator {
+    background-color: var(--vp-c-brand-1);
+    width: 3px;
+    border-radius: 2px;
+}
+
+.VPSidebarItem .item .link {
+    transition: background-color 0.25s ease, color 0.25s ease;
+    border-radius: 6px;
+    padding: 4px 8px 4px 12px;
+    margin: 0 -8px 0 -12px;
+}
+
+.VPSidebarItem .item .link:hover {
+    background-color: var(--vp-c-brand-soft);
+}
+
+/**
+ * Feature 卡片
+ * -------------------------------------------------------------------------- */
+
+.VPFeature {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--vp-c-bg-soft) !important;
+    background-color: var(--vp-c-bg-soft);
+}
+
+.VPFeature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-color: var(--vp-c-brand-soft) !important;
+}
+
+.dark .VPFeature:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.VPFeature .title {
+    font-weight: 600;
+}
+
+/**
+ * 内容区排版
+ * -------------------------------------------------------------------------- */
+
+.vp-doc p {
+    line-height: 1.8;
+}
+
+.vp-doc :not(pre) > code {
+    color: var(--vp-c-brand-1);
+    background-color: var(--vp-c-brand-soft);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+}
+
+.vp-doc div[class*='language-'] {
+    border-radius: 8px;
+}
+
+.vp-doc div[class*='language-'] > button.copy {
+    border-radius: 6px;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+    letter-spacing: -0.02em;
+}
+
+.vp-doc h2 {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--vp-c-divider);
+}
+
+/**
+ * 滚动条
+ * -------------------------------------------------------------------------- */
+
 body {
     overflow-y: scroll;
+}
+
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+    padding: 12px 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+.heading-highlight {
+    animation: heading-fade 4s ease forwards;
+}
+
+@keyframes heading-fade {
+    0%, 60% { background-color: rgba(250, 204, 21, 0.3); }
+    100% { background-color: transparent; }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--vp-c-divider);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--vp-c-brand-2);
+}
+
+/**
+ * 文本选中
+ * -------------------------------------------------------------------------- */
+
+::selection {
+    background-color: rgba(37, 99, 235, 0.2);
+    color: inherit;
+}
+
+.dark ::selection {
+    background-color: rgba(96, 165, 250, 0.25);
 }

@@ -2,7 +2,7 @@
 import DefaultTheme from "vitepress/theme";
 import {nextTick, onMounted, onUnmounted, provide} from "vue";
 import {useData, useRouter, onContentUpdated} from "vitepress";
-import mediumZoom from "medium-zoom";
+import mediumZoom, {type Zoom} from "medium-zoom";
 import Comments from "./Comments.vue";
 
 const {Layout} = DefaultTheme;
@@ -42,9 +42,11 @@ provide('toggle-appearance', async ({clientX: x, clientY: y}: MouseEvent) => {
   )
 })
 
-// Setup medium zoom with the desired options
+// Setup medium zoom: detach old instance before re-initializing
+let zoomInstance: Zoom | null = null
 const setupMediumZoom = () => {
-  mediumZoom("[data-zoomable]", {
+  zoomInstance?.detach()
+  zoomInstance = mediumZoom("[data-zoomable]", {
     background: "transparent",
   });
 };
@@ -83,17 +85,19 @@ function onHashChange() {
 }
 
 onMounted(() => {
-  // Intercept outline link clicks for precise scroll positioning
+  // Intercept only outline and doc heading anchor clicks for precise scroll positioning
   document.addEventListener('click', (e) => {
     const link = (e.target as HTMLElement).closest?.('a[href^="#"]') as HTMLAnchorElement | null
-    if (link) {
-      e.preventDefault()
-      e.stopImmediatePropagation()
-      const hash = link.getAttribute('href')!
-      history.replaceState(null, '', hash)
-      // Use requestAnimationFrame to ensure we scroll after any pending layout
-      requestAnimationFrame(() => scrollToTarget(hash))
-    }
+    if (!link) return
+    // Only handle clicks from the outline sidebar or heading anchor links
+    const isOutlineLink = link.closest('.VPDocAsideOutline, .VPLocalNav')
+    const isHeadingAnchor = link.classList.contains('header-anchor')
+    if (!isOutlineLink && !isHeadingAnchor) return
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    const hash = link.getAttribute('href')!
+    history.replaceState(null, '', hash)
+    requestAnimationFrame(() => scrollToTarget(hash))
   }, true)
   window.addEventListener('hashchange', onHashChange)
   if (window.location.hash) {
@@ -108,7 +112,7 @@ onMounted(() => {
         else { img.addEventListener('load', check, { once: true }); img.addEventListener('error', check, { once: true }) }
       })
       // Fallback timeout in case images take too long
-      setTimeout(scrollToHash, 2000)
+      setTimeout(() => scrollToTarget(window.location.hash), 2000)
     } else {
       scrollToTarget(window.location.hash)
     }

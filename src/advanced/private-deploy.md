@@ -46,6 +46,7 @@ docker pull ghcr.io/wechat-article/wechat-article-exporter:latest
 docker run -d \
   --restart always \
   --name wechat-article-exporter \
+  -e NODE_TLS_REJECT_UNAUTHORIZED=0 \
   -p 3000:3000 \
   -v ./.data:/app/.data \
   ghcr.io/wechat-article/wechat-article-exporter:latest
@@ -55,6 +56,7 @@ docker run -d \
 docker run -d \
   --restart always \
   --name wechat-article-exporter \
+  -e NODE_TLS_REJECT_UNAUTHORIZED=0 \
   -p 3000:3000 \
   -v ./.data:/app/.data \
   ghcr.io/wechat-article/wechat-article-exporter:latest
@@ -132,6 +134,8 @@ services:
   app:
     image: ghcr.io/wechat-article/wechat-article-exporter:latest
     restart: always
+    environment:
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
     volumes:
       # 持久化 KV 数据（防止容器重启丢失）
       - .data:/app/.data

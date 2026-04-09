@@ -13,15 +13,22 @@
 
 适合开发者调试或临时使用，需要 Node.js >= 22 环境。
 
+1. 拉取代码
+
 ```shell
-# 拉取代码
 git clone git@github.com:wechat-article/wechat-article-exporter.git
 cd wechat-article-exporter
+```
 
-# 安装依赖
+2. 安装依赖
+
+```shell
 yarn
+```
 
-# 启动开发服务器
+3. 启动开发服务器
+
+```shell
 yarn dev
 ```
 
@@ -94,8 +101,8 @@ mkcert localhost 127.0.0.1 ::1
 
 ### 拷贝`nginx.conf`和`docker-compose.yaml`文件
 
-```nginx configuration
-# nginx.conf 文件
+::: code-group
+```nginx [nginx.conf]
 server {
     listen 80;
     server_name localhost;
@@ -128,8 +135,7 @@ server {
 }
 ```
 
-```yaml
-# docker-compose.yml 文件
+```yaml [docker-compose.yml]
 services:
   app:
     image: ghcr.io/wechat-article/wechat-article-exporter:latest
@@ -153,6 +159,7 @@ services:
     depends_on:
       - app
 ```
+:::
 
 将以上所有文件放在一个目录中，比如`app`目录，最终的目录结构如下:
 ```text

@@ -53,20 +53,12 @@ export default defineConfig({
             {
                 text: "进阶使用",
                 items: [
-                    // {
-                    //     text: "获取 Credential 信息",
-                    //     link: "/advanced/credential",
-                    // },
                     {
-                        text: "抓取 Credential (wxdown程序版)(推荐)",
+                        text: "抓取 Credential",
                         link: "/advanced/wxdown-service",
                     },
                     {
-                        text: "抓取 Credential (mitmproxy插件版)",
-                        link: "/advanced/auto-detect-credential",
-                    },
-                    {
-                        text: "私有部署",
+                        text: "私有部署(网站)",
                         link: "/advanced/private-deploy",
                     },
                     {text: "常见问题(FAQ)", link: "/faq"},

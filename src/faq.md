@@ -145,3 +145,9 @@ Credentials 有效期约 **25 分钟**，过期后需要在微信中重新打开
 ![](assets/faq/network-panel.png)
 
 如果不确定如何分析，可以将请求详情截图发到 QQ 群中寻求帮助。
+
+## 抓取或导出失败
+
+大部分抓取和导出失败都是因为当天的公共代理额度用完了，可以自己检查下网站上面的【公共代理】页面，如果发现某个节点已经到了100%，就需要自己手动在【设置】页面的「代理节点」中删掉相关节点的域名。
+
+可参考 https://github.com/wechat-article/wechat-article-exporter/issues/157

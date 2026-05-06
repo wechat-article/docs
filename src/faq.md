@@ -123,6 +123,79 @@ Credentials 有效期约 **25 分钟**，过期后需要在微信中重新打开
 
 ![](assets/faq/delete-3.png)
 
+## 如何修改 Chrome 浏览器 IndexedDB 数据库的存储位置？
+
+由于本工具的所有公众号数据都存储在浏览器的 IndexedDB 中，当数据量较大时，可能会占用系统盘较多空间。可以通过以下两种方式修改 Chrome 的存储位置，将数据迁移到其他磁盘。
+
+::: warning 注意
+修改前请先关闭所有 Chrome 进程，并对原有数据做好备份，避免数据丢失。
+:::
+
+### 方法 1：使用 `--user-data-dir` 启动参数（推荐）
+
+通过命令行参数指定一个新的用户数据目录，Chrome 会将所有用户数据（包括 IndexedDB）保存到该目录。
+
+**Windows：**
+
+右键 Chrome 快捷方式 → 属性 → 在「目标」末尾追加参数：
+
+```
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --user-data-dir="D:\ChromeData"
+```
+
+**macOS：**
+
+通过终端启动：
+
+```bash
+open -a "Google Chrome" --args --user-data-dir="/Volumes/Data/ChromeData"
+```
+
+**Linux：**
+
+```bash
+google-chrome --user-data-dir="/home/user/ChromeData"
+```
+
+::: tip 提示
+该方法相当于创建了一个全新的 Chrome 配置文件，原有的书签、扩展、登录信息等都不会同步过来。如需保留原数据，可将原 User Data 目录的内容复制到新目录。
+:::
+
+### 方法 2：使用符号链接（保留原配置）
+
+将 IndexedDB 文件夹移动到其他磁盘，再通过符号链接指回原路径，这样 Chrome 仍然按原路径访问，但实际数据存储在新位置。
+
+Chrome 的 IndexedDB 默认路径：
+
+- **Windows**：`C:\Users\<用户名>\AppData\Local\Google\Chrome\User Data\Default\IndexedDB`
+- **macOS**：`~/Library/Application Support/Google/Chrome/Default/IndexedDB`
+- **Linux**：`~/.config/google-chrome/Default/IndexedDB`
+
+**Windows（管理员身份运行 CMD）：**
+
+```cmd
+:: 1. 将原目录移动到新位置
+move "C:\Users\<用户名>\AppData\Local\Google\Chrome\User Data\Default\IndexedDB" "D:\ChromeIndexedDB"
+
+:: 2. 创建符号链接
+mklink /D "C:\Users\<用户名>\AppData\Local\Google\Chrome\User Data\Default\IndexedDB" "D:\ChromeIndexedDB"
+```
+
+**macOS / Linux：**
+
+```bash
+# 1. 将原目录移动到新位置
+mv ~/Library/Application\ Support/Google/Chrome/Default/IndexedDB /Volumes/Data/ChromeIndexedDB
+
+# 2. 创建符号链接
+ln -s /Volumes/Data/ChromeIndexedDB ~/Library/Application\ Support/Google/Chrome/Default/IndexedDB
+```
+
+::: warning 注意
+- 如果使用了多个 Chrome 用户配置（Profile），需要分别处理对应的 `Profile 1`、`Profile 2` 等目录
+- 确保新的存储位置所在磁盘始终可用，否则 Chrome 将无法读取数据（外接磁盘需常驻连接）
+:::
+
 ## 如何检查请求失败原因？
 
 当遇到数据获取失败时，可以通过浏览器开发者工具查看具体的网络请求和错误信息：
